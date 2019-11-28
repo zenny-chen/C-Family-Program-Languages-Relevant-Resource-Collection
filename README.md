@@ -17,6 +17,7 @@
 1. C语言将控制台输出内容转存到指定文件：`freopen(filePath, "w", stdout);`。用完之后再用`fclose`关闭文件即可。在转存过程中，控制台内容仍然会输出。
 1. [《高级语言内的单指令多数据流计算(SIMD)》整理](https://www.cnblogs.com/zenny-chen/archive/2012/05/06/2486030.html)
 1. [gdb到底是怎样实现的？](https://www.toutiao.com/a6699652803918299655)
+1. [linux下的C语言开发（makefile编写详解）](https://www.toutiao.com/i6763898618379239950/)
 1. [用Verilog实现流水移位寄存器，请尽量不要使用“阻塞赋值”](https://www.toutiao.com/a6746164678080086531/)
 
 <br />
