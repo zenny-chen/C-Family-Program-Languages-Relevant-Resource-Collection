@@ -25,9 +25,9 @@
 
 ## C++17起废弃的标准C头文件
 
-1. \< cstdalign\>
-1. \< cstdbool\>
-1. \<ccomplex\>（这个头文件可以用\<complex\>来取代）
+1. \<cstdalign\>
+1. \<cstdbool\>
+1. \<ccomplex\>（这个头文件可以用`<complex>`来取代）
 
 <br />
 
