@@ -33,7 +33,7 @@
 
 ## 我的一些C语言有趣函数库
 
-统计一个无符号32位整型有多少个比特为1。
+- 统计一个无符号32位整型有多少个比特为1：
 
 ```c
 static unsigned PopulateOnes(unsigned n)
@@ -52,4 +52,43 @@ static unsigned PopulateOnes(unsigned n)
     return n >> 24;
 }
 ```
+<br />
+
+## 我的一些C++函数库
+
+- 在编译时统计一个无符号32位整数有多少比特1：
+
+```cpp
+template <unsigned N>
+struct GetOnes
+{
+    enum
+    {
+        ONES = ((N & 1) == 0 ? 0 : 1) + GetOnes < (N >> 1) >::ONES
+    };
+};
+
+template <>
+struct GetOnes<0>
+{
+    enum
+    {
+        ONES = 0
+    };
+};
+```
+
+- 使用指定整数常量的数值对齐
+
+```cpp
+template <unsigned ALIGNMENT>
+static inline unsigned GetAlignedValue(unsigned n)
+{
+    static_assert(GetOnes<ALIGNMENT>::ONES == 1, "Invalid ALIGNMENT!!");
+
+    return (n + (ALIGNMENT - 1)) & ~(ALIGNMENT - 1);
+}
+```
+
+
 
