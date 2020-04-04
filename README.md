@@ -5,6 +5,7 @@
 
 - [Objective-C Runtime](https://developer.apple.com/documentation/objectivec?language=objc)
 - [Objective-C Runtime Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Introduction/Introduction.html?language=objc#//apple_ref/doc/uid/TP40008048)
+- [Standard C++ Library reference](http://www.cplusplus.com/reference/)
 - [C2x](https://gustedt.wordpress.com/2018/11/12/c2x/)
 - [详解C语言中的stdin，stdout，stderr](http://blog.csdn.net/Crazy_Tengt/article/details/72717144)
 - [C语言压缩文件和用MD5算法校验文件完整性的实例教程_C 语言](https://yq.aliyun.com/ziliao/119635)
