@@ -93,5 +93,30 @@ static inline unsigned GetAlignedValue(unsigned n)
 }
 ```
 
+- 编译时获取一个整数至少需要用多少比特来表示：
+
+```cpp
+template <uint64_t VALUE, int pos = 0>
+struct GetBitCountValueStruct
+{
+    enum
+    {
+        BIT_COUNT = (GetBitCountValueStruct<(VALUE >> 1), pos + 1>::BIT_COUNT > (pos + 1)) ?
+                    GetBitCountValueStruct<(VALUE >> 1), pos + 1>::BIT_COUNT :
+                    ((VALUE & 1) != 0 ? (pos + 1) : 1)
+    };
+};
+
+template <int pos>
+struct GetBitCountValueStruct<0, pos>
+{
+    enum
+    {
+        BIT_COUNT = 1
+    };
+};
+
+#define GetBitCountInValue(value)   GetBitCountValueStruct<(value)>::BIT_COUNT
+```
 
 
