@@ -123,7 +123,7 @@ static inline unsigned GetAlignedValue(unsigned n)
 {
     static_assert(GetOnes<ALIGNMENT>::ONES == 1, "Invalid ALIGNMENT!!");
 
-    return (n + (ALIGNMENT - 1)) & ~(ALIGNMENT - 1);
+    return (n + (ALIGNMENT - 1U)) & ~(ALIGNMENT - 1U);
 }
 ```
 
