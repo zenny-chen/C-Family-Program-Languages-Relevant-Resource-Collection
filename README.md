@@ -36,6 +36,40 @@
 
 ## 我的一些C语言有趣函数库
 
+- 三大操作系统获取当前系统主存大小：
+
+```c
+#ifdef _WIN32
+#include <Windows.h>
+#elif defined(__APPLE__)
+#include <sys/types.h>
+#include <sys/sysctl.h>
+#else
+#include <unistd.h>
+#endif
+
+size_t system_physical_ram()
+{
+#ifdef _WIN32
+	MEMORYSTATUSEX ram;
+	ram.dwLength = sizeof (ram);
+	GlobalMemoryStatusEx(&ram);
+	return ram.ullTotalPhys * 1024;
+#elif defined(__APPLE__)
+	uint64_t ram = 0;
+	size_t len = sizeof(ram);
+	if (sysctlbyname("hw.memsize", &ram, &len, NULL, 0) == 0) {
+		return ram;
+	}
+	return 0;
+#else
+	size_t ps = sysconf(_SC_PAGESIZE);
+	size_t pn = sysconf(_SC_PHYS_PAGES);
+	return ps * pn;
+#endif
+}
+```
+
 - 统计一个无符号32位整型有多少个比特为1：
 
 ```c
