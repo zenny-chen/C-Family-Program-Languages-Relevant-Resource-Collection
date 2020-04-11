@@ -155,8 +155,6 @@ static inline constexpr int GetBitCountInValue(void)
 {
     return GetBitCountValueStruct<VALUE>::BIT_COUNT;
 }
-
-
 ```
 
 
