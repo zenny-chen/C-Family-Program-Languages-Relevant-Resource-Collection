@@ -150,7 +150,13 @@ struct GetBitCountValueStruct<0, pos>
     };
 };
 
-#define GetBitCountInValue(value)   GetBitCountValueStruct<(value)>::BIT_COUNT
+template <uint64_t VALUE>
+static inline constexpr int GetBitCountInValue(void)
+{
+    return GetBitCountValueStruct<VALUE>::BIT_COUNT;
+}
+
+
 ```
 
 
