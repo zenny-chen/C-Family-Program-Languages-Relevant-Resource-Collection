@@ -7,6 +7,7 @@
 - [Objective-C Runtime Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Introduction/Introduction.html?language=objc#//apple_ref/doc/uid/TP40008048)
 - [Standard C++ Library reference](http://www.cplusplus.com/reference/)
 - [C2x](https://gustedt.wordpress.com/2018/11/12/c2x/)
+- [值得我们学习的C语言开源项目汇总](https://www.toutiao.com/a6816559091704398339/)
 - [详解C语言中的stdin，stdout，stderr](http://blog.csdn.net/Crazy_Tengt/article/details/72717144)
 - [C语言压缩文件和用MD5算法校验文件完整性的实例教程_C 语言](https://yq.aliyun.com/ziliao/119635)
 - [C/C++下scanf的%匹配以及过滤字符串问题](https://www.toutiao.com/a6659550631625228808)
