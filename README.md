@@ -22,6 +22,7 @@
 - [《高级语言内的单指令多数据流计算(SIMD)》整理](https://www.cnblogs.com/zenny-chen/archive/2012/05/06/2486030.html)
 - [gdb到底是怎样实现的？](https://www.toutiao.com/a6699652803918299655)
 - [调试程序时，设置断点的原理是什么？](https://www.toutiao.com/a6651660887507599886/)
+- [gdb（debugger）加入软件断点的本质原理分析](https://www.toutiao.com/a6828945264800170504/)
 - [linux下的C语言开发（makefile编写详解）](https://www.toutiao.com/i6763898618379239950/)
 - [用Verilog实现流水移位寄存器，请尽量不要使用“阻塞赋值”](https://www.toutiao.com/a6746164678080086531/)
 
