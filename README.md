@@ -20,8 +20,10 @@
 - [C语言中的系统库system函数](https://baike.baidu.com/item/system/15078602?fr=aladdin)
 - C语言将控制台输出内容转存到指定文件：`freopen(filePath, "w", stdout);`。用完之后再用`fclose`关闭文件即可。在转存过程中，控制台内容仍然会输出。
 - GCC可直接使用`#pragma unroll`或是`_Pragma("unroll")`对循环做展开。
-- GCC/Clang编译器下要使用<intrin.h>，则得：`#include <x86intrin.h>`。
+- [pragma gcc optimize](https://blog.csdn.net/u010796610/article/details/69352484)
+- GCC/Clang编译器下要使用<intrin.h>，则需要包含：`#include <x86intrin.h>`。
 - GCC默认连接静态库使用此连接选项：`-static`。
+- [gcc命令objdump用法----反汇编](https://blog.csdn.net/cwcwj3069/article/details/8273129)
 - [C Programming/complex.h/carg](https://en.wikibooks.org/wiki/C_Programming/complex.h/carg)
 - [《高级语言内的单指令多数据流计算(SIMD)》整理](https://www.cnblogs.com/zenny-chen/archive/2012/05/06/2486030.html)
 - [gdb到底是怎样实现的？](https://www.toutiao.com/a6699652803918299655)
