@@ -3,10 +3,10 @@
 
 <br />
 
+- [ISO C Working Group's official website](http://www.open-std.org/jtc1/sc22/wg14/)
 - [Objective-C Runtime](https://developer.apple.com/documentation/objectivec?language=objc)
 - [Objective-C Runtime Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Introduction/Introduction.html?language=objc#//apple_ref/doc/uid/TP40008048)
 - [Standard C++ Library reference](http://www.cplusplus.com/reference/)
-- [C2x](https://gustedt.wordpress.com/2018/11/12/c2x/)
 - [Clang Contents](https://clang.llvm.org/docs/index.html)
 - [Attributes in Clang](https://clang.llvm.org/docs/AttributeReference.html)
 - [值得我们学习的C语言开源项目汇总](https://www.toutiao.com/a6816559091704398339/)
