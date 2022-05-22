@@ -55,6 +55,9 @@
 - C语言将控制台输出内容转存到指定文件：`freopen(filePath, "w", stdout);`。用完之后再用`fclose`关闭文件即可。在转存过程中，控制台内容仍然会输出。
 - GCC可直接使用`#pragma unroll`或是`_Pragma("unroll")`对循环做展开。
 - [pragma gcc optimize](https://blog.csdn.net/u010796610/article/details/69352484)
+- [gcc 内联汇编](https://blog.csdn.net/yanzhongqian/article/details/124482833)
+- [ARM64基础11:GCC内嵌汇编补充](https://blog.csdn.net/luteresa/article/details/120140887)
+- [如何在ARM aarch64中使用32位w寄存器进行GCC内联汇编？](https://cloud.tencent.com/developer/ask/sof/815815)
 - [gcc在代码中禁止某些warning](https://www.cnblogs.com/jhj117/p/6639111.html)
 - [gcc 编译 gcc warning 'variable tracking size limit exceeded' 原因及解决办法](https://blog.csdn.net/photon222/article/details/89217737)
 - [严格别名规则“-fstrict-aliasing”和“-fno-strict-aliasing”及类型双关](https://www.cnblogs.com/aquester/p/10299471.html)
