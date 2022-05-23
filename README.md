@@ -55,9 +55,6 @@
 - C语言将控制台输出内容转存到指定文件：`freopen(filePath, "w", stdout);`。用完之后再用`fclose`关闭文件即可。在转存过程中，控制台内容仍然会输出。
 - GCC可直接使用`#pragma unroll`或是`_Pragma("unroll")`对循环做展开。
 - [pragma gcc optimize](https://blog.csdn.net/u010796610/article/details/69352484)
-- [gcc 内联汇编](https://blog.csdn.net/yanzhongqian/article/details/124482833)
-- [ARM64基础11:GCC内嵌汇编补充](https://blog.csdn.net/luteresa/article/details/120140887)
-- [如何在ARM aarch64中使用32位w寄存器进行GCC内联汇编？](https://cloud.tencent.com/developer/ask/sof/815815)
 - [gcc在代码中禁止某些warning](https://www.cnblogs.com/jhj117/p/6639111.html)
 - [gcc 编译 gcc warning 'variable tracking size limit exceeded' 原因及解决办法](https://blog.csdn.net/photon222/article/details/89217737)
 - [严格别名规则“-fstrict-aliasing”和“-fno-strict-aliasing”及类型双关](https://www.cnblogs.com/aquester/p/10299471.html)
@@ -97,6 +94,77 @@ info registers regname
 - [gdb到底是怎样实现的？](https://www.toutiao.com/a6699652803918299655)
 - [调试程序时，设置断点的原理是什么？](https://www.toutiao.com/a6651660887507599886/)
 - [gdb（debugger）加入软件断点的本质原理分析](https://www.toutiao.com/a6828945264800170504/)
+
+<br />
+
+## GCC内联汇编相关技巧（Clang编译器亦与之兼容）
+
+- [gcc 内联汇编](https://blog.csdn.net/yanzhongqian/article/details/124482833)
+- [ARM64基础11:GCC内嵌汇编补充](https://blog.csdn.net/luteresa/article/details/120140887)
+- [如何在ARM aarch64中使用32位w寄存器进行GCC内联汇编？](https://cloud.tencent.com/developer/ask/sof/815815)
+
+以下为几个常用例子：
+```c
+#include <stdbool.h>
+
+// 常见的内联汇编方式
+static inline int MyARM64Sub(int a, int b)
+{
+    int result;
+    asm("sub    %w[dst], %w[src1], %w[src2]"
+        : [dst] "=r" (result)
+        : [src1] "r" (a), [src2] "r" (b));
+    return result;
+}
+
+// 参数expected在内联汇编中既作为输入参数又作为输出参数
+static inline unsigned MyAtomicCAS_LSE(volatile void *dst, unsigned expected, unsigned newValue)
+{
+    asm("cas    %w[expected], %w[newValue], [%[dst]]"
+        : [expected] "+r" (expected)
+        : [newValue] "r" (newValue), [dst] "r" (dst));
+
+    return expected;
+}
+
+static inline unsigned MyLDXR(const volatile void *ptr)
+{
+    unsigned result;
+    asm("ldxr   %w[result], [%[ptr]]"
+        : [result] "=r" (result)
+        : [ptr] "r" (ptr));
+    return result;
+}
+
+// 这里为了避免对不同变量使用相同的寄存器名，而特意指定相应的寄存器
+static inline bool MySTXR(volatile void *dst, unsigned value)
+{
+    register volatile void *pDst asm("x2") = dst;
+    register unsigned srcValue asm ("w1") = value;
+    register bool result asm ("w0");
+
+    asm("stxr   %w[result], %w[src], [%[dst]]"
+        : [result] "=r" (result)
+        : [src] "r" (srcValue), [dst] "r" (pDst));
+    return result;
+}
+
+// 以上内联汇编的C函数在Android NDK平台下的测试：
+const int result = MyARM64Sub(7, 3);
+syslog(LOG_INFO, "The subtraction result: %d\n", result);
+
+volatile unsigned data = 100;
+unsigned expected = data;
+expected = MyAtomicCAS_LSE(&data, expected, expected + 10);
+syslog(LOG_INFO, "expected = %u\n", expected);
+syslog(LOG_INFO, "now data = %u\n", data);
+
+expected = MyLDXR(&data);
+expected += 1000U;
+const bool bRes = MySTXR(&data, expected);
+syslog(LOG_INFO, "bRes = %d, expected = %u\n", bRes, expected);
+syslog(LOG_INFO, "now data = %u\n", data);
+```
 
 <br />
 
