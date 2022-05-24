@@ -117,7 +117,21 @@ static inline int MyARM64Sub(int a, int b)
     return result;
 }
 
-// 参数expected在内联汇编中既作为输入参数又作为输出参数
+// 只有一个输出操作数
+static inline unsigned MyGetFPCR(void)
+{
+    unsigned long long result;
+    asm("mrs    %[result], fpcr" : [result] "=r" (result));
+    return (unsigned)result;
+}
+
+// 只有一个输入操作数
+static inline void MySetFPCR(unsigned fpcrValue)
+{
+    asm("msr    fpcr, %[fpcrValue]" : : [fpcrValue] "r" ((unsigned long long)fpcrValue));
+}
+
+// 参数expected在内联汇编中既作为输入操作数又作为输出操作数
 static inline unsigned MyAtomicCAS_LSE(volatile void *dst, unsigned expected, unsigned newValue)
 {
     asm("cas    %w[expected], %w[newValue], [%[dst]]"
@@ -164,6 +178,10 @@ expected += 1000U;
 const bool bRes = MySTXR(&data, expected);
 syslog(LOG_INFO, "bRes = %d, expected = %u\n", bRes, expected);
 syslog(LOG_INFO, "now data = %u\n", data);
+
+MySetFPCR(0x07000000U);
+expected = MyGetFPCR();
+syslog(LOG_INFO, "Current FPCR: 0x%08X\n", expected);
 ```
 
 <br />
