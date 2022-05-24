@@ -111,7 +111,7 @@ info registers regname
 static inline int MyARM64Sub(int a, int b)
 {
     int result;
-    asm("sub    %w[dst], %w[src1], %w[src2]"
+    asm volatile ("sub    %w[dst], %w[src1], %w[src2]"
         : [dst] "=r" (result)
         : [src1] "r" (a), [src2] "r" (b));
     return result;
@@ -121,20 +121,20 @@ static inline int MyARM64Sub(int a, int b)
 static inline unsigned MyGetFPCR(void)
 {
     unsigned long long result;
-    asm("mrs    %[result], fpcr" : [result] "=r" (result));
+    asm volatile ("mrs    %[result], fpcr" : [result] "=r" (result));
     return (unsigned)result;
 }
 
 // 只有一个输入操作数
 static inline void MySetFPCR(unsigned fpcrValue)
 {
-    asm("msr    fpcr, %[fpcrValue]" : : [fpcrValue] "r" ((unsigned long long)fpcrValue));
+    asm volatile ("msr    fpcr, %[fpcrValue]" : : [fpcrValue] "r" ((unsigned long long)fpcrValue));
 }
 
 // 参数expected在内联汇编中既作为输入操作数又作为输出操作数
 static inline unsigned MyAtomicCAS_LSE(volatile void *dst, unsigned expected, unsigned newValue)
 {
-    asm("cas    %w[expected], %w[newValue], [%[dst]]"
+    asm volatile ("cas    %w[expected], %w[newValue], [%[dst]]"
         : [expected] "+r" (expected)
         : [newValue] "r" (newValue), [dst] "r" (dst));
 
@@ -144,7 +144,7 @@ static inline unsigned MyAtomicCAS_LSE(volatile void *dst, unsigned expected, un
 static inline unsigned MyLDXR(const volatile void *ptr)
 {
     unsigned result;
-    asm("ldxr   %w[result], [%[ptr]]"
+    asm volatile ("ldxr   %w[result], [%[ptr]]"
         : [result] "=r" (result)
         : [ptr] "r" (ptr));
     return result;
@@ -157,7 +157,7 @@ static inline bool MySTXR(volatile void *dst, unsigned value)
     register unsigned srcValue asm ("w1") = value;
     register bool result asm ("w0");
 
-    asm("stxr   %w[result], %w[src], [%[dst]]"
+    asm volatile ("stxr   %w[result], %w[src], [%[dst]]"
         : [result] "=r" (result)
         : [src] "r" (srcValue), [dst] "r" (pDst));
     return result;
