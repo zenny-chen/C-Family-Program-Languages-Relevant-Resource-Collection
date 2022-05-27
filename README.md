@@ -526,6 +526,57 @@ const char* zf_get_current_exec_path(void)
 
 ```
 
+- 获得时间戳函数：
+
+```c
+#ifdef _WIN32
+
+#include <Windows.h>
+#include <intrin.h>
+
+int main(void)
+{
+    DWORD tBegin = GetTickCount();
+    _mm_mfence();
+
+    volatile int count = 0;
+
+    for (int i = 0; i < 1000 * 1000; i++) {
+        count += i;
+    }
+
+    DWORD tEnd = GetTickCount();
+    _mm_mfence();
+    printf("Time spent: %u ms\n", tEnd - tBegin);
+}
+
+#else
+
+#include <sys/time.h>
+#include <x86intrin.h>
+
+int main(void)
+{
+        struct timeval tBegin, tEnd;
+        gettimeofday(&tBegin, NULL);
+        _mm_mfence();
+
+        volatile int count = 0;
+        
+        for(int i = 0; i < 1000 * 1000; i++) {
+            count += i;
+        }
+        
+        gettimeofday(&tEnd, NULL);
+        _mm_mfence();
+        
+        long long deltaTime = 1000000LL * (tEnd.tv_sec - tBegin.tv_sec ) + (tEnd.tv_usec - tBegin.tv_usec);
+
+        printf("Time spent: %lldus", deltaTime);
+}
+#endif
+```
+
 - 三大操作系统获取当前系统主存大小：
 
 ```c
