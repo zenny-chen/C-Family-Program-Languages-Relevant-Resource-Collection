@@ -186,6 +186,102 @@ syslog(LOG_INFO, "Current FPCR: 0x%08X\n", expected);
 
 <br />
 
+## C11与C++11中的 **alignas**
+
+在C++11中与C11中的 **`alignas`** 的摆放位置会因编译器而各有不同。而且C++11与C11中的摆放位置也是有所区别。其中，Clang编译器对 **`alignas`** 位置要求更为苛刻，而MSVC则对其位置要求比较宽松。
+
+下面我们先举Clang编译器下C11和C++11中 **`alignas`** 用于修饰变量或结构体的摆放位置
+
+```cpp
+// 首先是C++11中alignas能够摆放的位置
+
+static char s_dummy_chars alignas(64) [2] = "a";
+static int s_dummy_int alignas(64) = 100;
+
+alignas(64) static char s_dummy_chars2[2] = "a";
+alignas(64) static int s_dummy_int2 = 100;
+```
+
+```c
+// 然后这里是C11中alignas能够摆放的位置
+#include <stdalign.h>
+
+static char alignas(64) s_dummy_chars[2] = "a";
+static int alignas(64) s_dummy_int = 100;
+
+alignas(64) static char s_dummy_chars2[2] = "a";
+alignas(64) static int s_dummy_int2 = 100;
+
+static alignas(64) char s_dummy_chars3[2] = "a";
+static alignas(64) int s_dummy_int3 = 100;
+
+// Warning: Attribute '_Alignas' is ignored,
+// place it after "struct" to apply attribute to type declaration
+// 这里对alignas(64)的修饰会被Clang编译器忽略
+alignas(64) struct DummyS1
+{
+    char s;
+};
+
+// 在Clang中可以这么对结构体类型做对齐要求设置
+struct __attribute__((aligned(64))) DummyS2
+{
+    char s;
+};
+```
+
+下面是MSVC编译器下，C11和C++11中 **`alignas`** 用于修饰变量或结构体的摆放位置：
+
+```cpp
+// 这里首先是C++源文件
+
+static char s_dummy_chars alignas(64)[2] = "a";
+static int s_dummy_int alignas(64) = 100;
+
+alignas(64) static char s_dummy_chars2[2] = "a";
+alignas(64) static int s_dummy_int2 = 100;
+
+static alignas(64) char s_dummy_chars3[2] = "a";
+static alignas(64) int s_dummy_int3 = 100;
+
+static char alignas(64) s_dummy_chars4[2] = "a";
+static int alignas(64) s_dummy_int4 = 100;
+
+struct alignas(64) DummyS
+{
+    char s;
+};
+```
+
+```c
+// 然后这个是C语言源文件
+#include <stdalign.h>
+
+static char alignas(64) s_dummy_chars[2] = "a";
+static int alignas(64) s_dummy_int = 100;
+
+alignas(64) static char s_dummy_chars2[2] = "a";
+alignas(64) static int s_dummy_int2 = 100;
+
+static alignas(64) char s_dummy_chars3[2] = "a";
+static alignas(64) int s_dummy_int3 = 100;
+
+// 在MSVC中，直接用alignas(64)修饰结构体类型将会直接编译报错
+//alignas(64) struct DummyS1 { char s; };
+
+// MSVC中可以用以下方式修饰C语言的结构体对齐方式
+struct __declspec(align(64)) DummyS2
+{
+    char s;
+};
+```
+
+综上所述，无论是哪种编译器，无论是C还是C++，对一个变量指定用 **`alignas`** 进行修饰时，将它摆放在变量声明语句的最前面才是最通用的形式。
+
+而C++中，**`alignas`** 用于修饰结构体的摆放位置在编译器中都是一样的；而C11中则暂不支持对结构体的修饰。
+
+<br />
+
 ## C++与C语言标准库头文件的对应
 
 ```cpp
