@@ -90,6 +90,10 @@ info all-registers
 info registers reggroup
 info registers regname
 ```
+- Linux下在GDB调试模式下忽略 **`SIGSEGV`** 信号，而直接让程序继续执行：
+```bash
+handle SIGSEGV nostop noprint
+```
 - [GDB and LLDB Command Examples](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-command-examples.html)
 - [gdb到底是怎样实现的？](https://www.toutiao.com/a6699652803918299655)
 - [调试程序时，设置断点的原理是什么？](https://www.toutiao.com/a6651660887507599886/)
