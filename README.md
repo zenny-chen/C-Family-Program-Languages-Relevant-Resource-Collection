@@ -26,6 +26,7 @@
 - [\<uchar.h\>中的 **c16rtomb** ](https://cloud.tencent.com/developer/section/1009566)
 - [C语言压缩文件和用MD5算法校验文件完整性的实例教程_C 语言](https://yq.aliyun.com/ziliao/119635)
 - [C/C++下scanf的%匹配以及过滤字符串问题](https://www.toutiao.com/a6659550631625228808)
+- [Clang官方对__has_include与\#include_next的举例](https://clang.llvm.org/docs/LanguageExtensions.html#include-file-checking-macros)
 - [（有用的C++ proposal）Familiar template syntax for generic lambdas](http://open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0428r2.pdf)
 - [C++ vector清空元素的三种方法](https://blog.csdn.net/weixin_30897079/article/details/97119054)
 - [如何在C++ 11中创建线程对象数组？](http://cn.voidcc.com/question/p-vgibagru-zc.html)
