@@ -36,6 +36,33 @@
 - [C++11中获取当前线程的ID](https://en.cppreference.com/w/cpp/thread/get_id)：使用 **`std::this_thread::get_id()`**
 - [一文读懂C++右值引用和std::move](https://zhuanlan.zhihu.com/p/335994370)
 - [优先使用using，而非typedef](https://zhuanlan.zhihu.com/p/266140466)
+- C++11之后，新型函数类型声明方式：
+```cpp
+#include <cstdio>
+#include <functional>
+
+extern "C" void CPPTest(void)
+{
+    // 老旧的函数类型声明方式
+    const std::function<int (void)> &f = [](void) -> int {
+        return 100;
+    };
+
+    // 这里是对int类型构造器的调用，因此a的类型是int
+    decltype(int()) a = 100;
+
+    printf("value = %d\n", a + f());
+
+    // ==== 以下为C++11之后新型函数类型的声明方式 ====
+
+    typedef auto func_type(void) -> int;
+    using ft = auto (void) -> int;
+
+    const std::function<auto () -> int>& f2 = [] { return -100; };
+
+    printf("value = %d\n", a + f() + f2());
+}
+```
 - [std::initializer_list](https://en.cppreference.com/w/cpp/utility/initializer_list)
 - [std::isnan](https://en.cppreference.com/w/cpp/numeric/math/isnan)
 - [std::to_string](https://en.cppreference.com/w/cpp/string/basic_string/to_string)
@@ -207,6 +234,11 @@ static int s_dummy_int alignas(64) = 100;
 
 alignas(64) static char s_dummy_chars2[2] = "a";
 alignas(64) static int s_dummy_int2 = 100;
+
+struct alignas(64) DummyS
+{
+    char s;
+};
 ```
 
 ```c
@@ -283,9 +315,9 @@ struct __declspec(align(64)) DummyS2
 };
 ```
 
-综上所述，无论是哪种编译器，无论是C还是C++，对一个变量指定用 **`alignas`** 进行修饰时，将它摆放在变量声明语句的最前面才是最通用的形式。
+综上所述，无论是哪种编译器，无论是C还是C++，对一个 **变量** 指定用 **`alignas`** 进行修饰时，将它摆放在变量声明语句的最前面才是最通用的形式。
 
-而C++中，**`alignas`** 用于修饰结构体的摆放位置在编译器中都是一样的；而C11中则暂不支持对结构体的修饰。
+而C++中，**`alignas`** 用于修饰 **结构体、联合体、类等复合类型** 时的摆放位置在编译器中都是一样的——都是放在 **`struct`**、**`union`** 或 **`class`** 等关键字的后面，类型标识符的前面；而C11/C17中则暂不支持对结构体/联合体等复合类型的修饰。
 
 <br />
 
@@ -342,7 +374,7 @@ struct __declspec(align(64)) DummyS2
 - [CMAKE添加编译选项](https://blog.csdn.net/qinglongzhan/article/details/80743731)（汇编语言的编译选项的环境变量：`CMAKE_ASM_FLAGS`）
 - [如何使用CMake为单个目标编译具有不同选项的不同源文件？](https://www.javaroad.cn/questions/90941)
 - [cmake 中使用环境变量](https://www.cnblogs.com/stdpain/p/13467203.html)
-- CMake同时指定当前项目支持C、C++和CUDA：
+- CMake同时指定当前项目支持C、C++和CUDA编译器（对于汇编语言的支持使用 **`enable_language()`**，而不在这里显式指定）：
 ```cmake
 PROJECT(project_name C CXX CUDA)
 ```
