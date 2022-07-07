@@ -41,6 +41,9 @@
 #include <cstdio>
 #include <functional>
 
+// 老旧的函数声明方式
+static int(* Foo(int a))();
+
 extern "C" void CPPTest(void)
 {
     // 老旧的函数类型声明方式
@@ -61,6 +64,19 @@ extern "C" void CPPTest(void)
     const std::function<auto () -> int>& f2 = [] { return -100; };
 
     printf("value = %d\n", a + f() + f2());
+
+    auto (*pFunc)(int) -> auto (*)() -> int = &Foo;
+    a = pFunc(20)();
+    printf("Finally, a = %d\n", a);
+}
+
+static int Foo2() { return 10; }
+
+// C++11之后新型函数声明方式
+static auto Foo(int a) -> auto (*)() -> int
+{
+    printf("a is %d in Foo!\n", a);
+    return &Foo2;
 }
 ```
 - [std::initializer_list](https://en.cppreference.com/w/cpp/utility/initializer_list)
