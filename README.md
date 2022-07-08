@@ -89,6 +89,7 @@ static auto Foo(int a) -> auto (*)() -> int
 - [C++20不定参数个数的宏](https://en.cppreference.com/w/cpp/preprocessor/replace#Function-like_macros)
 - [c++11-17 模板核心知识（四）—— 可变参数模板 Variadic Template](https://www.cnblogs.com/zhangyachen/p/13946450.html)
 - [C++17结构化绑定](https://blog.csdn.net/weixin_50019806/article/details/122838335)
+- [C++17：内联变量](https://www.toutiao.com/article/7117584483603497472/)
 - [C++20新特性—consteval与constinit](https://blog.csdn.net/guxch/article/details/113641104)
 - [c++中的 constexpr lambda 表达式](https://docs.microsoft.com/zh-cn/cpp/cpp/lambda-expressions-constexpr)
 - [C++20 Coroutine实例教学](https://zhuanlan.zhihu.com/p/414506528)
