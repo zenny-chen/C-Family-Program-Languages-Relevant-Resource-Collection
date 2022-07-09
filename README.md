@@ -118,10 +118,11 @@ extern "C" void CPPTest(void)
     printf("a = %d, b = %d, res = %f\n", a, b, res);
 }
 ```
-- [C++20不定参数个数的宏](https://en.cppreference.com/w/cpp/preprocessor/replace#Function-like_macros)
 - [c++11-17 模板核心知识（四）—— 可变参数模板 Variadic Template](https://www.cnblogs.com/zhangyachen/p/13946450.html)
 - [C++17结构化绑定](https://blog.csdn.net/weixin_50019806/article/details/122838335)
 - [C++17：内联变量](https://www.toutiao.com/article/7117584483603497472/)
+- [c++17中的 constexpr lambda 表达式](https://docs.microsoft.com/zh-cn/cpp/cpp/lambda-expressions-constexpr)
+- [C++20不定参数个数的宏](https://en.cppreference.com/w/cpp/preprocessor/replace#Function-like_macros)
 - C++20中泛型模板lambda表达式
 ```cpp
     // Generic template lambda in C++20
@@ -139,7 +140,6 @@ extern "C" void CPPTest(void)
     printf("Generic lambda result: %d\n", lamRet);
 ```
 - [C++20新特性—consteval与constinit](https://blog.csdn.net/guxch/article/details/113641104)
-- [c++中的 constexpr lambda 表达式](https://docs.microsoft.com/zh-cn/cpp/cpp/lambda-expressions-constexpr)
 - [C++20的三路比较运算符 **`operator<=>`** ](https://blog.csdn.net/longji/article/details/104017451)
 - [std::jthread与std::thread的区别](https://blog.csdn.net/danshiming/article/details/117648806)
 - [C++20 Coroutine实例教学](https://zhuanlan.zhihu.com/p/414506528)
