@@ -31,11 +31,22 @@
 - [（有用的C++ proposal）Familiar template syntax for generic lambdas](http://open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0428r2.pdf)
 - [C++ vector清空元素的三种方法](https://blog.csdn.net/weixin_30897079/article/details/97119054)
 - [如何在C++ 11中创建线程对象数组？](http://cn.voidcc.com/question/p-vgibagru-zc.html)
-- [std::jthread与std::thread的区别](https://blog.csdn.net/danshiming/article/details/117648806)
 - [C++11 并发指南五(std::condition_variable 详解)](https://www.cnblogs.com/haippy/p/3252041.html)
 - [C++11中获取当前线程的ID](https://en.cppreference.com/w/cpp/thread/get_id)：使用 **`std::this_thread::get_id()`**
 - [一文读懂C++右值引用和std::move](https://zhuanlan.zhihu.com/p/335994370)
 - [优先使用using，而非typedef](https://zhuanlan.zhihu.com/p/266140466)
+- C++11对某一类型做cv限定符的移除并声明一个对象
+```cpp
+    const int c = 100;
+    std::decay<decltype(c)>::type a = c;        // a为int类型
+```
+- C++11原生字符串字面量（Raw string literal）
+```cpp
+    const char16_t* raw_u16string = uR"(你好，世界！)";
+    std::u16string u16str(raw_u16string);
+    printf(R"(The raw string length is: %zu
+            )", u16str.length());
+```
 - C++11之后，新型函数类型声明方式：
 ```cpp
 #include <cstdio>
@@ -90,9 +101,26 @@ static auto Foo(int a) -> auto (*)() -> int
 - [c++11-17 模板核心知识（四）—— 可变参数模板 Variadic Template](https://www.cnblogs.com/zhangyachen/p/13946450.html)
 - [C++17结构化绑定](https://blog.csdn.net/weixin_50019806/article/details/122838335)
 - [C++17：内联变量](https://www.toutiao.com/article/7117584483603497472/)
+- C++20中泛型模板lambda表达式
+```cpp
+    // Generic template lambda in C++20
+    auto const genericLambda = []<typename T, int size>(const T& a) -> T {
+        if constexpr (size < 0) {
+            puts("Illegal size!!");
+        }
+        printf("size is: %d\n", size);
+
+        return a + T(1);
+    };
+
+    // Use the generic lambda
+    auto const lamRet = genericLambda.template operator() <short, 4> (100);
+    printf("Generic lambda result: %d\n", lamRet);
+```
 - [C++20新特性—consteval与constinit](https://blog.csdn.net/guxch/article/details/113641104)
 - [c++中的 constexpr lambda 表达式](https://docs.microsoft.com/zh-cn/cpp/cpp/lambda-expressions-constexpr)
 - [C++20的三路比较运算符 **`operator<=>`** ](https://blog.csdn.net/longji/article/details/104017451)
+- [std::jthread与std::thread的区别](https://blog.csdn.net/danshiming/article/details/117648806)
 - [C++20 Coroutine实例教学](https://zhuanlan.zhihu.com/p/414506528)
 - [C++20协程原理和应用](https://csdnnews.blog.csdn.net/article/details/124123024)
 - [C语言的JSON库Jansson](https://www.toutiao.com/a6751005440798114315/)
@@ -870,7 +898,6 @@ static inline constexpr int GetBitCountInValue(void)
 ```
 
 - C++11标准：UTF-8字符串与UTF-16字符串互转
-
 ```cpp
 #include <string>
 #include <codecvt>
@@ -888,15 +915,7 @@ extern "C" void CPPTest(void)
 }
 ```
 
-- 对某一类型做cv限定符的移除并声明一个对象
-
-```cpp
-    const int c = 100;
-    std::decay<decltype(c)>::type a = c;        // a为int类型
-```
-
 - 如果一个函数参数为一个结构体类型，那么可以对它传递一个匿名结构体对象；同样，如果返回类型是一个结构体类型，则也可以使用匿名结构体的初始化器进行构造：
-
 ```cpp
     struct {
         int a, b, c;
@@ -911,7 +930,6 @@ extern "C" void CPPTest(void)
 ```
 
 - 某个类型的对象指针直接显式地调用该类型的构造方法(仅针对Visual C++可用)：
-
 ```cpp
     struct MyStruct
     {
@@ -940,17 +958,7 @@ extern "C" void CPPTest(void)
     printf("sum = %d\n", sum);  // 这里将输出：sum = 20
 ```
 
-- C++原生字符串字面量（Raw string literal）
-
-```cpp
-    const char16_t* raw_u16string = uR"(你好，世界！)";
-    std::u16string u16str(raw_u16string);
-    printf(R"(The raw string length is: %zu
-            )", u16str.length());
-```
-
 - C++显式调用构造方法来创建一个指定内存位置的对象
-
 ```cpp
     struct MyObject
     {
@@ -982,26 +990,7 @@ extern "C" void CPPTest(void)
     p->~MyObject();
 ```
 
-- C++20中泛型模板lambda表达式
-
-```cpp
-    // Generic template lambda in C++20
-    auto const genericLambda = []<typename T, int size>(const T& a) -> T {
-        if constexpr (size < 0) {
-            puts("Illegal size!!");
-        }
-        printf("size is: %d\n", size);
-
-        return a + T(1);
-    };
-
-    // Use the generic lambda
-    auto const lamRet = genericLambda.template operator() <short, 4> (100);
-    printf("Generic lambda result: %d\n", lamRet);
-```
-
 - C++17/20中将lambda表达式转换为函数指针的形式进行调用，并能存放其参数（这里的lambda表达式中不允许捕获任何变量）
-
 ```cpp
 #include <cstdio>
 
