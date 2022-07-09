@@ -97,6 +97,27 @@ static auto Foo(int a) -> auto (*)() -> int
 - [c++ ostringstream的用法（c语言的sprintf）](https://blog.csdn.net/zhenguo26/article/details/80716075)
 - [C++中输出/输入十六进制数](https://blog.csdn.net/woaijssss/article/details/93190865)
 - C++中将std::string十六进制字符串转为整数：`std::strtoull`；整数转字符串：`std::to_string()`
+- C++14中的泛型lambda表达式以及返回匿名结构体对象的函数
+```cpp
+#include <cstdio>
+
+static auto Foo(int a, int b)
+{
+    struct { int a, b; } s{ a, b };
+    return s;
+}
+
+extern "C" void CPPTest(void)
+{
+    auto const lam = [](auto a, auto b) {
+        return a + b + decltype(a)(100);
+    };
+
+    auto const res = lam(10.5, 20.5);
+    auto const [a, b] = Foo(1, 3);
+    printf("a = %d, b = %d, res = %f\n", a, b, res);
+}
+```
 - [C++20不定参数个数的宏](https://en.cppreference.com/w/cpp/preprocessor/replace#Function-like_macros)
 - [c++11-17 模板核心知识（四）—— 可变参数模板 Variadic Template](https://www.cnblogs.com/zhangyachen/p/13946450.html)
 - [C++17结构化绑定](https://blog.csdn.net/weixin_50019806/article/details/122838335)
