@@ -29,6 +29,35 @@
 - [Clang官方对__has_include与\#include_next的举例](https://clang.llvm.org/docs/LanguageExtensions.html#include-file-checking-macros)
 - [Wrapper Headers（GCC对\#include_next的官方解释）](https://gcc.gnu.org/onlinedocs/cpp/Wrapper-Headers.html)
 - [（有用的C++ proposal）Familiar template syntax for generic lambdas](http://open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0428r2.pdf)
+- C++将一个类对象隐式转换为一个基本类型
+```cpp
+#include <cstdio>
+
+struct MyID
+{
+    unsigned value : 24;
+    unsigned type : 8;
+
+    MyID() : value(0), type(0) { }
+    MyID(const unsigned &val) : value(val), type(0) { }
+
+    inline operator unsigned () const
+    {
+        return value;
+    }
+};
+
+extern "C" void CPPTest()
+{
+    printf("size is: %zu\n", sizeof(MyID));
+
+    MyID aID = 100;
+    printf("aID value = %u, type = %d\n", aID.value, aID.type);
+
+    const unsigned x = aID;
+    printf("x = %u\n", x);
+}
+```
 - [C++ vector清空元素的三种方法](https://blog.csdn.net/weixin_30897079/article/details/97119054)
 - [如何在C++ 11中创建线程对象数组？](http://cn.voidcc.com/question/p-vgibagru-zc.html)
 - [C++11 并发指南五(std::condition_variable 详解)](https://www.cnblogs.com/haippy/p/3252041.html)
