@@ -126,6 +126,7 @@ static auto Foo(int a) -> auto (*)() -> int
 - [c++ ostringstream的用法（c语言的sprintf）](https://blog.csdn.net/zhenguo26/article/details/80716075)
 - [C++中输出/输入十六进制数](https://blog.csdn.net/woaijssss/article/details/93190865)
 - C++中将std::string十六进制字符串转为整数：`std::strtoull`；整数转字符串：`std::to_string()`
+- [C++11 std::strtol, std::strtoll](https://en.cppreference.com/w/cpp/string/byte/strtol)
 - C++14中的泛型lambda表达式以及返回匿名结构体对象的函数
 ```cpp
 #include <cstdio>
