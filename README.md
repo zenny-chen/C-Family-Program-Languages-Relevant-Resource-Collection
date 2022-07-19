@@ -189,6 +189,17 @@ extern "C" void CPPTest(void)
 - GCC/Clang编译器下要使用<intrin.h>，则需要包含：`#include <x86intrin.h>`。
 - GCC默认连接静态库使用此连接选项：`-static`。
 - GCC编译器指定结构体对齐：`-fpack-struct=n`。
+- GCC与Clang使用打包的结构体：
+```cpp
+#if __clang__
+    struct [[gnu::packed]]
+#else
+    struct __attribute__((packed))
+#endif
+    SS { long long a; int b; long long c; };
+
+    static_assert(sizeof(SS) == 20);
+```
 - 用GCC编译C++代码时最好使用 `g++`，否则会导致一些特定的C++函数符号找不到。如果遇到某些引用STL库的函数而引发符号找不到错误，则可尝试添加 `-lstdc++` 来解决。
 - [gcc, g++编译时消除特定警告的方法](https://blog.csdn.net/li_wen01/article/details/71171413)
 - GCC上对于静态库或动态库文件名不以`lib`作为前缀的情况下可在连接时直接用该文件名去连。比如我们要连接一个`libtest.so`和`testlib.so`，我们可以用：`gcc -ltest testlib.so -o target`。
