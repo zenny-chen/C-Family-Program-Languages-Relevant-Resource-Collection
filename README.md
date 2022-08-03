@@ -120,7 +120,7 @@ static auto Foo(int a) -> auto (*)() -> int
 }
 ```
 - [std::initializer_list](https://en.cppreference.com/w/cpp/utility/initializer_list)
-- C++11中对 **`std::initializer_list`**的具体使用：
+- C++11中对 **`std::initializer_list`** 的具体使用：
 ```cpp
 #include <cstdio>
 #include <initializer_list>
