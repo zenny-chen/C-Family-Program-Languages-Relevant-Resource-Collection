@@ -120,6 +120,53 @@ static auto Foo(int a) -> auto (*)() -> int
 }
 ```
 - [std::initializer_list](https://en.cppreference.com/w/cpp/utility/initializer_list)
+- C++11中对 **`std::initializer_list`**的具体使用：
+```cpp
+#include <cstdio>
+#include <initializer_list>
+
+struct MyObject
+{
+    int a, b;
+};
+
+struct MyVirtualObj
+{
+    int a, b;
+
+    // Non POD type, needs the constructor with std::initializer_list
+    MyVirtualObj(const std::initializer_list<int>& initList)
+    {
+        a = 0; b = 0;
+
+        int index = 0;
+        for (auto const& data : initList)
+        {
+            const int currIndex = index++;
+            if (currIndex == 0)
+            {
+                a = data;
+                continue;
+            }
+            if (currIndex == 1)
+            {
+                b = data;
+                continue;
+            }
+        }
+    }
+
+    virtual void hello() const { }
+};
+
+extern "C" void CPPTest()
+{
+    // For Plain Old Data, use it directly
+    MyObject obj1{ 1, 2 };
+
+    MyVirtualObj obj2{ 10, 20 };
+}
+```
 - [std::isnan](https://en.cppreference.com/w/cpp/numeric/math/isnan)
 - [std::to_string](https://en.cppreference.com/w/cpp/string/basic_string/to_string)
 - [C++/C++11中std::transform的使用](https://blog.csdn.net/fengbingchun/article/details/63252470)
