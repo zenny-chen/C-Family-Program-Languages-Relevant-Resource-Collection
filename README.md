@@ -266,6 +266,16 @@ DWORD GetCurrentProcessId();
 
 pid_t getpid(void);
 ```
+- 获取当前系统环境变量
+```c
+#ifdef _WIN32
+#include <Windows.h>
+GetEnvironmentVariableA("APPDATA", buffer, bufferSize);
+#else
+#include <stdlib.h>
+strcpy(buffer, getenv("HOME"));
+#endif
+```
 
 <br />
 
