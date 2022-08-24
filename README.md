@@ -197,7 +197,6 @@ extern "C" void CPPTest(void)
 }
 ```
 - [c++11-17 模板核心知识（四）—— 可变参数模板 Variadic Template](https://www.cnblogs.com/zhangyachen/p/13946450.html)
-- [C++17结构化绑定](https://blog.csdn.net/weixin_50019806/article/details/122838335)
 - [C++17 Structured binding declaration](https://en.cppreference.com/w/cpp/language/structured_binding)
 - [C++17：内联变量](https://www.toutiao.com/article/7117584483603497472/)
 - [c++17中的 constexpr lambda 表达式](https://docs.microsoft.com/zh-cn/cpp/cpp/lambda-expressions-constexpr)
