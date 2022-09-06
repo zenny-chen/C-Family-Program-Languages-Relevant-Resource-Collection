@@ -196,6 +196,20 @@ extern "C" void CPPTest(void)
     printf("a = %d, b = %d, res = %f\n", a, b, res);
 }
 ```
+- C++14中lambda捕获列表里定义局部对象：
+```cpp
+    struct
+    {
+        int a;
+        int b;
+    } s { 1, 2 };
+
+    auto const lam = [x = s.a, y = s.b](int i) -> int {
+        return x + y + i;
+    };
+
+    printf("The value is: %d\n", lam(10));
+```
 - [c++11-17 模板核心知识（四）—— 可变参数模板 Variadic Template](https://www.cnblogs.com/zhangyachen/p/13946450.html)
 - [C++17 Structured binding declaration](https://en.cppreference.com/w/cpp/language/structured_binding)
 - [C++17：内联变量](https://www.toutiao.com/article/7117584483603497472/)
