@@ -244,7 +244,7 @@ extern "C" void CPPTest(void)
 - [使用popen执行shell命令并获取返回结果](https://www.cnblogs.com/hiawind/p/9089288.html)
 - [C语言中的系统库system函数](https://baike.baidu.com/item/system/15078602?fr=aladdin)
 - C语言将控制台输出内容转存到指定文件：`freopen(filePath, "w", stdout);`。用完之后再用`fclose`关闭文件即可。在转存过程中，控制台内容仍然会输出。
-- GCC可直接使用`#pragma unroll`或是`_Pragma("unroll")`对循环做展开。
+- 循环展开：GCC可直接使用`#pragma unroll`或是`_Pragma("unroll")`对循环做展开。MSVC可使用：**`#pragma loop(hint_parallel(0))`** 或 **`_Pragma("loop(hint_parallel(0))")`**。
 - [pragma gcc optimize](https://blog.csdn.net/u010796610/article/details/69352484)（另参考此文：[GCC 设置部分代码的优化级别](http://blog.chinaunix.net/uid-26334045-id-4743500.html)）
 - [Clang对指定函数禁用优化](https://clang.llvm.org/docs/AttributeReference.html#optnone)（比如：
 ```cpp
@@ -252,6 +252,7 @@ void foo(void) [[ clang::optnone ]] {  }
 ```
 ）
 - [gcc在代码中禁止某些warning](https://www.cnblogs.com/jhj117/p/6639111.html)
+- MSVC禁用指定warning使用 **`/wd"warningID"`**。比如：**`/wd"4819"`** 用于禁用4819编号的警告。
 - [gcc 编译 gcc warning 'variable tracking size limit exceeded' 原因及解决办法](https://blog.csdn.net/photon222/article/details/89217737)
 - [严格别名规则“-fstrict-aliasing”和“-fno-strict-aliasing”及类型双关](https://www.cnblogs.com/aquester/p/10299471.html)
 - GCC对某一函数启用`-O2`编译选项并禁用`strict-aliasing`：`__attribute__((optimize("-O2"), optimize("-fno-strict-aliasing")))`
