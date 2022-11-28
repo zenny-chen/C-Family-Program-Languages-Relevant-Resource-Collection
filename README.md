@@ -254,6 +254,7 @@ void foo(void) [[ clang::optnone ]] {  }
 ```
 ）
 - [gcc在代码中禁止某些warning](https://www.cnblogs.com/jhj117/p/6639111.html)
+- [Suppressing Warnings in GCC and Clang](https://nelkinda.com/blog/suppress-warnings-in-gcc-and-clang/)
 - MSVC禁用指定warning使用 **`/wd"warningID"`**。比如：**`/wd"4819"`** 用于禁用4819编号的警告。
 - [gcc 编译 gcc warning 'variable tracking size limit exceeded' 原因及解决办法](https://blog.csdn.net/photon222/article/details/89217737)
 - [严格别名规则“-fstrict-aliasing”和“-fno-strict-aliasing”及类型双关](https://www.cnblogs.com/aquester/p/10299471.html)
