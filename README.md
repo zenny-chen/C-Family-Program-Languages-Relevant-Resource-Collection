@@ -219,6 +219,7 @@ extern "C" void CPPTest(void)
 - [C++17 Structured binding declaration](https://en.cppreference.com/w/cpp/language/structured_binding)
 - [C++17：内联变量](https://www.toutiao.com/article/7117584483603497472/)
 - [c++17中的 constexpr lambda 表达式](https://docs.microsoft.com/zh-cn/cpp/cpp/lambda-expressions-constexpr)
+- [C++17 template \<auto\>](https://mariusbancila.ro/blog/2018/05/23/template-auto/)
 - [C++20不定参数个数的宏](https://en.cppreference.com/w/cpp/preprocessor/replace#Function-like_macros)
 - C++20中泛型模板lambda表达式
 ```cpp
