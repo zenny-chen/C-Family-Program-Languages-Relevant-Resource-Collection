@@ -240,6 +240,7 @@ extern "C" void CPPTest(void)
 ```
 - [C++20新特性—consteval与constinit](https://blog.csdn.net/guxch/article/details/113641104)
 - [C++20的三路比较运算符 **`operator<=>`** ](https://blog.csdn.net/longji/article/details/104017451)
+- [std::counting_semaphore](https://en.cppreference.com/w/cpp/thread/counting_semaphore)
 - [std::jthread与std::thread的区别](https://blog.csdn.net/danshiming/article/details/117648806)
 - [C++20 Coroutine实例教学](https://zhuanlan.zhihu.com/p/414506528)
 - [C++20协程原理和应用](https://csdnnews.blog.csdn.net/article/details/124123024)
