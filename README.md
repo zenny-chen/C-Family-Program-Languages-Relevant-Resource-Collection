@@ -20,6 +20,10 @@
 - CLion下常用快捷键——`点两次shift`：调出文件搜索工具栏；`ctrl+shift+f`：调出在当前工程搜索关键词的工具栏。
 - [Clion中单行注释、多行注释及取消注释快捷键示例](https://blog.csdn.net/pan66rui/article/details/107841452)
 - [CLion Hexadecimal view](https://www.jetbrains.com/help/clion/using-hexadecimal-view.html)
+- CLion中查看当前源文件的所定义的所有函数、全局变量与类型：
+1. 用CLion打开当前源文件
+1. 点击菜单栏上的Navigate，选择File Structure
+1. 也可使用快捷键：Ctrl + F12
 - [CLion遇到Out Of Memory问题的解决方法](http://it.taocms.org/12/12678.htm)（点击菜单栏的 **Help**，然后选择“**Edit Custom VM Options...**”项即可编辑）
 - [值得我们学习的C语言开源项目汇总](https://www.toutiao.com/a6816559091704398339/)
 - [C编译器剖析_1.5 结合C语言来学汇编_浮点数运算(比较大小)](https://blog.csdn.net/sheisc/article/details/43017909)
