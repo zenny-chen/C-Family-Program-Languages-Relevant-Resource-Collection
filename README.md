@@ -289,6 +289,7 @@ void foo(void) [[ clang::optnone ]] {  }
 - [linux 强制32位编译,使用CMake强制进行32位编译的正确方法](https://blog.csdn.net/weixin_34952628/article/details/116756981)
 - [C Programming/complex.h/carg](https://en.wikibooks.org/wiki/C_Programming/complex.h/carg)
 - [《高级语言内的单指令多数据流计算(SIMD)》整理](https://www.cnblogs.com/zenny-chen/archive/2012/05/06/2486030.html)
+- [Correctly implementing a spinlock in C++](https://rigtorp.se/spinlock/)
 - 获取当前进程ID：
 ```c
 // Windows
