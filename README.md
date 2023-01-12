@@ -17,6 +17,7 @@
 - Eclipse下设置程序运行的环境变量：`${env_var:MY_ENVIRONMENT_VARIABLE_HERE}`。
 - Eclipse下对汇编文件的使用：Eclipse下汇编文件后缀名必须用 **.S** （即大写的S）。在项目工程中选中一个汇编源文件，然后鼠标右键，选择Properties。在C/C++ Build下先点击Tool Chain Editor，确认Select Tool所选的工具已经是GCC Assembler。要调试该汇编文件的话则随后点击Settings，点击General，在Assembler flags一栏中添加 **`-g`** 即可调试。
 - Eclipse在CUDA工程下添加GAS工具：鼠标右键项目工程，选择properties，点击C/C++ Build，再点击Tool Chain Editor。在下方used tools一栏点击右侧的Select Tools，然后在左侧列表中选中GCC Assembler，最后点击Add tool。
+- [Nsight Eclipse Plugins Edition Getting Started Guide](https://docs.nvidia.com/cuda/nsight-eclipse-plugins-guide/index.html)
 - CLion下常用快捷键——`点两次shift`：调出文件搜索工具栏；`ctrl+shift+f`：调出在当前工程搜索关键词的工具栏。
 - [Clion中单行注释、多行注释及取消注释快捷键示例](https://blog.csdn.net/pan66rui/article/details/107841452)
 - [CLion Hexadecimal view](https://www.jetbrains.com/help/clion/using-hexadecimal-view.html)
