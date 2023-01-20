@@ -35,6 +35,7 @@
 - [Clang官方对__has_include与\#include_next的举例](https://clang.llvm.org/docs/LanguageExtensions.html#include-file-checking-macros)
 - [Wrapper Headers（GCC对\#include_next的官方解释）](https://gcc.gnu.org/onlinedocs/cpp/Wrapper-Headers.html)
 - [（有用的C++ proposal）Familiar template syntax for generic lambdas](http://open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0428r2.pdf)
+- [优先使用using，而非typedef](https://zhuanlan.zhihu.com/p/266140466)
 - C++将一个类对象隐式转换为一个基本类型
 ```cpp
 #include <cstdio>
@@ -64,14 +65,14 @@ extern "C" void CPPTest()
     printf("x = %u\n", x);
 }
 ```
-- [C++的RAII与智能指针](https://zhuanlan.zhihu.com/p/466904205)
 - [C++ vector清空元素的三种方法](https://blog.csdn.net/weixin_30897079/article/details/97119054)
+- [C++的RAII与智能指针](https://zhuanlan.zhihu.com/p/466904205)
 - [如何在C++ 11中创建线程对象数组？](http://cn.voidcc.com/question/p-vgibagru-zc.html)
 - [C++11 并发指南五(std::condition_variable 详解)](https://www.cnblogs.com/haippy/p/3252041.html)
 - [C++11中获取当前线程的ID](https://en.cppreference.com/w/cpp/thread/get_id)：使用 **`std::this_thread::get_id()`**
 - [std::chrono::duration_cast](https://en.cppreference.com/w/cpp/chrono/duration/duration_cast)（除了 **`std::chrono::high_resolution_clock`**，还可使用 **`std::chrono::steady_clock`** 作为时间戳）
 - [一文读懂C++右值引用和std::move](https://zhuanlan.zhihu.com/p/335994370)
-- [优先使用using，而非typedef](https://zhuanlan.zhihu.com/p/266140466)
+- [Type alias, alias template \(since C++11\)](https://en.cppreference.com/w/cpp/language/type_alias)（比如使用 **`template <typename T> using auto_ptr = unique_ptr<T>`**）
 - C++11对某一类型做cv限定符的移除并声明一个对象
 ```cpp
     const int c = 100;
