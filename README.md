@@ -73,7 +73,7 @@ extern "C" void CPPTest()
 - [std::chrono::duration_cast](https://en.cppreference.com/w/cpp/chrono/duration/duration_cast)（除了 **`std::chrono::high_resolution_clock`**，还可使用 **`std::chrono::steady_clock`** 作为时间戳）
 - [一文读懂C++右值引用和std::move](https://zhuanlan.zhihu.com/p/335994370)
 - [Type alias, alias template \(since C++11\)](https://en.cppreference.com/w/cpp/language/type_alias)（比如使用 **`template <typename T> using auto_ptr = unique_ptr<T>`**）
-- C++11对某一类型做cv限定符的移除并声明一个对象
+- C++11对某一类型做cv限定符的移除并声明一个对象：使用 [std::decay](https://en.cppreference.com/w/cpp/types/decay)，例如：
 ```cpp
     const int c = 100;
     std::decay<decltype(c)>::type a = c;        // a为int类型
