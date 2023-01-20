@@ -294,7 +294,7 @@ void foo(void) [[ clang::optnone ]] {  }
 - [《高级语言内的单指令多数据流计算(SIMD)》整理](https://www.cnblogs.com/zenny-chen/archive/2012/05/06/2486030.html)
 - [Correctly implementing a spinlock in C++](https://rigtorp.se/spinlock/)
 - [undefined symbol问题的查找定位与解决方法](https://blog.csdn.net/hjwang1/article/details/114387236)
-- [undefined reference to `std::__cxx11::basic_string<char>](https://www.cnblogs.com/lukybee/p/11846889.html)
+- [undefined reference to `std::__cxx11::basic_string<char>`](https://www.cnblogs.com/lukybee/p/11846889.html)
 - 获取当前进程ID：
 ```c
 // Windows
