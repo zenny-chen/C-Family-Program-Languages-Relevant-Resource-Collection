@@ -250,7 +250,7 @@ extern "C" void CPPTest(void)
 - [std::jthread与std::thread的区别](https://blog.csdn.net/danshiming/article/details/117648806)
 - [C++20 Coroutine实例教学](https://zhuanlan.zhihu.com/p/414506528)
 - [C++20协程原理和应用](https://csdnnews.blog.csdn.net/article/details/124123024)
-- **C++ Boost** 配置额外的编译选项：[Configuration](https://www.boost.org/build/doc/html/bbv2/overview/configuration.html)
+- **C++ Boost** 库配置额外的编译选项：[Configuration](https://www.boost.org/build/doc/html/bbv2/overview/configuration.html)
 - [C语言的JSON库Jansson](https://www.toutiao.com/a6751005440798114315/)
 - [链接过程中的符号重定位_C底层](http://blog.csdn.net/darkfaker/article/details/79370796)
 - [类Unix系统中如何获取另一个程序的输出内容](https://baike.baidu.com/item/popen)
@@ -270,7 +270,7 @@ void foo(void) [[ clang::optnone ]] {  }
 - [gcc 编译 gcc warning 'variable tracking size limit exceeded' 原因及解决办法](https://blog.csdn.net/photon222/article/details/89217737)
 - [严格别名规则“-fstrict-aliasing”和“-fno-strict-aliasing”及类型双关](https://www.cnblogs.com/aquester/p/10299471.html)
 - GCC对某一函数启用`-O2`编译选项并禁用`strict-aliasing`：`__attribute__((optimize("-O2"), optimize("-fno-strict-aliasing")))`
-- GCC/Clang编译器下要使用<intrin.h>，则需要包含：`#include <x86intrin.h>`。
+- GCC/Clang编译器下要使用 `<intrin.h>`，则需要包含：**`#include <x86intrin.h>`**。
 - GCC默认连接静态库使用此连接选项：`-static`。
 - GCC编译器指定结构体对齐：`-fpack-struct=n`。
 - GCC与Clang使用打包的结构体：
@@ -293,6 +293,8 @@ void foo(void) [[ clang::optnone ]] {  }
 - [C Programming/complex.h/carg](https://en.wikibooks.org/wiki/C_Programming/complex.h/carg)
 - [《高级语言内的单指令多数据流计算(SIMD)》整理](https://www.cnblogs.com/zenny-chen/archive/2012/05/06/2486030.html)
 - [Correctly implementing a spinlock in C++](https://rigtorp.se/spinlock/)
+- [undefined symbol问题的查找定位与解决方法](https://blog.csdn.net/hjwang1/article/details/114387236)
+- [undefined reference to `std::__cxx11::basic_string<char>](https://www.cnblogs.com/lukybee/p/11846889.html)
 - 获取当前进程ID：
 ```c
 // Windows
