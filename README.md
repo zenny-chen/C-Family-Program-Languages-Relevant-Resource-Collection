@@ -245,7 +245,7 @@ extern "C" void CPPTest(void)
     printf("Generic lambda result: %d\n", lamRet);
 ```
 - [C++20新特性—consteval与constinit](https://blog.csdn.net/guxch/article/details/113641104)
-- [**\_\_VA_OPT\_\_**](https://en.cppreference.com/w/cpp/preprocessor/replace)（For versions (3,4), replacement-list may contain the token sequence **\_\_VA_OPT\_\_** ( content ), which is replaced by content if **\_\_VA_ARGS\_\_** is non-empty, and expands to nothing otherwise.）
+- [**\_\_VA_OPT\_\_**](https://en.cppreference.com/w/cpp/preprocessor/replace)（For versions (3,4), replacement-list may contain the token sequence **`__VA_OPT__ (content)`**, which is replaced by ***content*** if **`__VA_ARGS__`** is non-empty, and expands to nothing otherwise.）
 - [C++20的三路比较运算符 **`operator<=>`** ](https://blog.csdn.net/longji/article/details/104017451)
 - [std::counting_semaphore](https://en.cppreference.com/w/cpp/thread/counting_semaphore)
 - [std::jthread与std::thread的区别](https://blog.csdn.net/danshiming/article/details/117648806)
