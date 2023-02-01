@@ -286,6 +286,7 @@ void foo(void) [[ clang::optnone ]] {  }
 
     static_assert(sizeof(SS) == 20);
 ```
+- [干货！gcc和g++编译器有什么区别？看完这篇就明白了](https://www.toutiao.com/article/7194762934655091252/)
 - 用GCC编译C++代码时最好使用 `g++`，否则会导致一些特定的C++函数符号找不到。如果遇到某些引用STL库的函数而引发符号找不到错误，则可尝试添加 `-lstdc++` 来解决。
 - [gcc, g++编译时消除特定警告的方法](https://blog.csdn.net/li_wen01/article/details/71171413)
 - GCC上对于静态库或动态库文件名不以`lib`作为前缀的情况下可在连接时直接用该文件名去连。比如我们要连接一个`libtest.so`和`testlib.so`，我们可以用：`gcc -ltest testlib.so -o target`。
