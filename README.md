@@ -447,7 +447,8 @@ static alignas(64) int s_dummy_int3 = 100;
 
 // Warning: Attribute '_Alignas' is ignored,
 // place it after "struct" to apply attribute to type declaration
-// 这里对alignas(64)的修饰会被Clang编译器忽略
+// 这里对alignas(64)的修饰会被Clang编译器忽略。
+// 而使用 `struct alignas(64) DummyS1` 则直接编译报错！
 alignas(64) struct DummyS1
 {
     char s;
@@ -496,8 +497,9 @@ alignas(64) static int s_dummy_int2 = 100;
 static alignas(64) char s_dummy_chars3[2] = "a";
 static alignas(64) int s_dummy_int3 = 100;
 
-// 在MSVC中，直接用alignas(64)修饰结构体类型将会直接编译报错
-//alignas(64) struct DummyS1 { char s; };
+// 在MSVC中，直接用alignas(64)修饰结构体类型将会直接编译报错。
+// 除了以下声明，使用 `alignas(64) struct DummyS1 { char s; };` 也会有编译报错。
+// struct alignas(64) DummyS1 { char s; };
 
 // MSVC中可以用以下方式修饰C语言的结构体对齐方式
 struct __declspec(align(64)) DummyS2
