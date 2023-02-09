@@ -68,6 +68,8 @@ extern "C" void CPPTest()
 - [C++ vector清空元素的三种方法](https://blog.csdn.net/weixin_30897079/article/details/97119054)
 - [Detecting in C++ whether a type is defined, part 1: The initial plunge](https://devblogs.microsoft.com/oldnewthing/20190708-00/?p=102664)
 - [C++的RAII与智能指针](https://zhuanlan.zhihu.com/p/466904205)
+- [Lambda expressions](https://en.cppreference.com/w/cpp/language/lambda)
+- [Lambda expressions in C++](https://learn.microsoft.com/en-us/cpp/cpp/lambda-expressions-in-cpp)
 - [如何在C++ 11中创建线程对象数组？](http://cn.voidcc.com/question/p-vgibagru-zc.html)
 - [C++11 并发指南五(std::condition_variable 详解)](https://www.cnblogs.com/haippy/p/3252041.html)
 - [C++11中获取当前线程的ID](https://en.cppreference.com/w/cpp/thread/get_id)：使用 **`std::this_thread::get_id()`**
