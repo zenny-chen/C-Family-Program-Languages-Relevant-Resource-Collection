@@ -28,6 +28,7 @@
 - [CLion遇到Out Of Memory问题的解决方法](http://it.taocms.org/12/12678.htm)（点击菜单栏的 **Help**，然后选择“**Edit Custom VM Options...**”项即可编辑）
 - [值得我们学习的C语言开源项目汇总](https://www.toutiao.com/a6816559091704398339/)
 - [C编译器剖析_1.5 结合C语言来学汇编_浮点数运算(比较大小)](https://blog.csdn.net/sheisc/article/details/43017909)
+- Clang编译器下新引入的 **半精度浮点** 类型：[Half-Precision Floating Point](https://clang.llvm.org/docs/LanguageExtensions.html#half-precision-floating-point)
 - [详解C语言中的stdin，stdout，stderr](http://blog.csdn.net/Crazy_Tengt/article/details/72717144)
 - [\<uchar.h\>中的 **c16rtomb** ](https://cloud.tencent.com/developer/section/1009566)
 - [C语言压缩文件和用MD5算法校验文件完整性的实例教程_C 语言](https://yq.aliyun.com/ziliao/119635)
