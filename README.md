@@ -35,7 +35,7 @@
 - [C/C++下scanf的%匹配以及过滤字符串问题](https://www.toutiao.com/a6659550631625228808)
 - 对 **`sprintf`** 做封装需要使用 **`vsprintf`**：
 ```c
-#include<stdio.h>
+#include <stdio.h>
 #include <stdarg.h>
 
 int my_sprintf(char buffer, const char *fmt, ...)
