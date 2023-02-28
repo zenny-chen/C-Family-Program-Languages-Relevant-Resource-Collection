@@ -41,7 +41,7 @@
 int my_sprintf(char buffer, const char *fmt, ...)
 {
     va_list arglist;
-    va_start(argptr, fmt);
+    va_start(arglist, fmt);
     const int count = vsprintf(buffer, fmt, arglist);
     va_end(arglist);
     return count;
