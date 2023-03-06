@@ -12,7 +12,7 @@
 - [Attributes in Clang](https://clang.llvm.org/docs/AttributeReference.html)
 - [Clang Language Extensions](https://clang.llvm.org/docs/LanguageExtensions.html)
 - [GCC Extensions to the C Language Family](https://gcc.gnu.org/onlinedocs/gcc/C-Extensions.html#C-Extensions)
-- **C++ Boost** 库配置额外的编译选项：**[Configuration](https://www.boost.org/build/doc/html/bbv2/overview/configuration.html)** 以及 **[Boost.Config](https://www.boost.org/doc/libs/1_80_0/libs/config/doc/html/index.html)**。
+- **C++ Boost** 库配置额外的编译选项：**[Configuration](https://www.boost.org/build/doc/html/bbv2/overview/configuration.html)** 以及 **[Boost.Config](https://www.boost.org/doc/libs/1_80_0/libs/config/doc/html/index.html)**。（limiting which libraries get built with the **`--with-<library-name>`** or **`--without-<library-name>`** options. 比如：`bjam.exe --toolset=msvc-14.2 architecture=x86 address-model=64 link=static --build-type=complete --with-system --with-thread --with-date_time --with-filesystem --with-serialization`）
 - [P1467R5 Extended floating-point types and standard names](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2021/p1467r5.html)
 - [Eclipse官方帮助文档](https://help.eclipse.org/latest/)
 - Eclipse下设置程序运行的环境变量：`${env_var:MY_ENVIRONMENT_VARIABLE_HERE}`。
