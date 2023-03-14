@@ -283,6 +283,7 @@ extern "C" void CPPTest(void)
 - [Correctly implementing a spinlock in C++](https://rigtorp.se/spinlock/)
 - [undefined symbol问题的查找定位与解决方法](https://blog.csdn.net/hjwang1/article/details/114387236)
 - [undefined reference to `std::__cxx11::basic_string<char>`](https://www.cnblogs.com/lukybee/p/11846889.html)
+- [目标文件和可执行文件里面都有什么](https://www.cnblogs.com/zjuhaohaoxuexi/p/16217669.html)
 - 获取当前进程ID：
 ```c
 // Windows
