@@ -13,7 +13,6 @@
 - [Clang Language Extensions](https://clang.llvm.org/docs/LanguageExtensions.html)
 - [GCC Extensions to the C Language Family](https://gcc.gnu.org/onlinedocs/gcc/C-Extensions.html#C-Extensions)
 - **C++ Boost** 库配置额外的编译选项：**[Configuration](https://www.boost.org/build/doc/html/bbv2/overview/configuration.html)** 以及 **[Boost.Config](https://www.boost.org/doc/libs/1_80_0/libs/config/doc/html/index.html)**。（limiting which libraries get built with the **`--with-<library-name>`** or **`--without-<library-name>`** options. 比如：`bjam.exe --toolset=msvc-14.2 architecture=x86 address-model=64 link=static --build-type=complete --with-system --with-thread --with-date_time --with-filesystem --with-serialization`）
-- [P1467R5 Extended floating-point types and standard names](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2021/p1467r5.html)
 - [Eclipse官方帮助文档](https://help.eclipse.org/latest/)
 - Eclipse下设置程序运行的环境变量：`${env_var:MY_ENVIRONMENT_VARIABLE_HERE}`。
 - Eclipse下对汇编文件的使用：Eclipse下汇编文件后缀名必须用 **.S** （即大写的S）。在项目工程中选中一个汇编源文件，然后鼠标右键，选择Properties。在C/C++ Build下先点击Tool Chain Editor，确认Select Tool所选的工具已经是GCC Assembler。要调试该汇编文件的话则随后点击Settings，点击General，在Assembler flags一栏中添加 **`-g`** 即可调试。
@@ -28,8 +27,10 @@
 1. 也可使用快捷键：Ctrl + F12
 - [CLion遇到Out Of Memory问题的解决方法](http://it.taocms.org/12/12678.htm)（点击菜单栏的 **Help**，然后选择“**Edit Custom VM Options...**”项即可编辑）
 - [值得我们学习的C语言开源项目汇总](https://www.toutiao.com/a6816559091704398339/)
+- [P1467R5 Extended floating-point types and standard names](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2021/p1467r5.html)
 - [C编译器剖析_1.5 结合C语言来学汇编_浮点数运算(比较大小)](https://blog.csdn.net/sheisc/article/details/43017909)
 - Clang编译器下新引入的 **半精度浮点** 类型：[Half-Precision Floating Point](https://clang.llvm.org/docs/LanguageExtensions.html#half-precision-floating-point)
+- [strcpy_s](https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/strcpy-s-wcscpy-s-mbscpy-s)（返回类型为 **`errno_t`**，返回值定义为 **`<errno.h>`**；可用的值比如：**`EPERM`**、**`EIO`** 等）
 - [详解C语言中的stdin，stdout，stderr](http://blog.csdn.net/Crazy_Tengt/article/details/72717144)
 - [\<uchar.h\>中的 **c16rtomb** ](https://cloud.tencent.com/developer/section/1009566)
 - [C语言压缩文件和用MD5算法校验文件完整性的实例教程_C 语言](https://yq.aliyun.com/ziliao/119635)
