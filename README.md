@@ -96,6 +96,7 @@ extern "C" void CPPTest()
 - [Type alias, alias template \(since C++11\)](https://en.cppreference.com/w/cpp/language/type_alias)（比如使用 **`template <typename T> using auto_ptr = unique_ptr<T>`**）
 - C++11对某一类型做cv限定符的移除并声明一个对象：使用 [std::decay](https://en.cppreference.com/w/cpp/types/decay)，例如：
 ```cpp
+    #include <type_traits>
     const int c = 100;
     std::decay<decltype(c)>::type a = c;        // a为int类型
 ```
