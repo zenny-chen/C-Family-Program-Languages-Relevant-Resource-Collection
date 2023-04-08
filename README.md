@@ -274,9 +274,10 @@ extern "C" void CPPTest(void)
 - [std::jthread与std::thread的区别](https://blog.csdn.net/danshiming/article/details/117648806)
 - [C++20 Coroutine实例教学](https://zhuanlan.zhihu.com/p/414506528)
 - [C++20协程原理和应用](https://csdnnews.blog.csdn.net/article/details/124123024)
-- [C语言的JSON库Jansson](https://www.toutiao.com/a6751005440798114315/)
 - [Why is the new C++ visibility support so useful?](https://gcc.gnu.org/wiki/Visibility)
 - [链接过程中的符号重定位_C底层](http://blog.csdn.net/darkfaker/article/details/79370796)
+- [C语言的JSON库Jansson](https://www.toutiao.com/a6751005440798114315/)
+- [C中字符串查找](https://blog.csdn.net/sinat_41752325/article/details/125201722)
 - [C语言中的系统库system函数](https://baike.baidu.com/item/system/15078602?fr=aladdin)
 - C语言将控制台输出内容转存到指定文件：`freopen(filePath, "w", stdout);`。用完之后再用`fclose`关闭文件即可。在转存过程中，控制台内容仍然会输出。
 - 循环展开：GCC可直接使用`#pragma unroll`或是`_Pragma("unroll")`对循环做展开。MSVC可使用：**`#pragma loop(hint_parallel(0))`** 或 **`_Pragma("loop(hint_parallel(0))")`**。
