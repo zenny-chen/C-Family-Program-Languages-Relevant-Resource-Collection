@@ -1071,6 +1071,6 @@ int main(void)
 
 ![codespaces console](images/codespaces_console.png)
 
-控制台一般处于当前用户根目录，比如：`/workspaces/codespaces-blank/`。
+先点击上图中左上角的三条横杠图标的按钮，然后就能出现对话框。控制台一般处于当前用户根目录，比如：`/workspaces/codespaces-blank/`。
 
 
