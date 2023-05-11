@@ -1063,3 +1063,14 @@ int main(void)
 }
 ```
 
+<br />
+
+## Github Codespaces调出控制台
+
+如下图所示
+
+![codespaces console](images/codespaces_console.png)
+
+控制台一般处于当前用户根目录，比如：`/workspaces/codespaces-blank/`。
+
+
