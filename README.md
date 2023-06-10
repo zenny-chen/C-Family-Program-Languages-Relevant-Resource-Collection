@@ -417,6 +417,32 @@ struct __declspec(align(64)) DummyS2
 
 <br />
 
+## C++11与C23 \[\[ attributes \]\] 对函数、对象及复合类型的摆放位置
+
+```cpp
+// 修饰对象
+[[maybe_unused]] static int dummy0 = 0;
+
+static int dummy1 [[maybe_unused]] = 1;
+
+static int dummyArray [[maybe_unused]] [5]  = { };
+
+static void (* volatile dummyFuncPtrs [[maybe_unused]] [5])(int) = { };
+
+// 修饰函数
+[[maybe_unused]] static void Foo0(void) { }
+
+static void Foo1 [[maybe_unused]] (void) { }
+
+// 修饰复合类型
+struct [[maybe_unused]] Dummy
+{
+    int d;
+};
+```
+
+<br />
+
 ## C++与C语言标准库头文件的对应
 
 ```cpp
