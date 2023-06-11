@@ -465,7 +465,7 @@ static struct [[maybe_unused]] Dummy2
     int c __attribute__((unused));
 } s2 __attribute__((unused));   // 修饰用结构体类型Dummy2所声明的对象
 ```
-综上所述，对于使用 `[[attribute]]` 和 `__attribute__((attribute))` 修饰对象时，两者均可以放在对象标识符的后面。不过 `[[attribute]]` 可放在整个声明的开头；而 `__attribute__((attribute))` 可放在对象标识符的前面。
+综上所述，对于使用 `[[attribute]]` 和 `__attribute__((attribute))` 修饰对象时，两者均可以放在整个对象声明的开头，也能放在对象标识符的后面。此外，`__attribute__((attribute))` 还可放在对象标识符的前面。
 
 在修饰函数时，两者均可放在整个函数声明的开头。不过 `[[attribute]]` 只能放在函数标识符的后面；而 `__attribute__((attribute))` 只能放在函数标识符的前面。
 
