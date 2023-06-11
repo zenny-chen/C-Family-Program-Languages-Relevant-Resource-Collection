@@ -417,7 +417,7 @@ struct __declspec(align(64)) DummyS2
 
 <br />
 
-## C++11与C23 \[\[ attributes \]\] 对函数、对象及复合类型的摆放位置
+## C++11与C23 \[\[ attributes \]\] 对函数、对象及自定义类型的摆放位置
 
 ```cpp
 // 修饰对象
