@@ -434,6 +434,9 @@ static void (* volatile dummyFuncPtrs [[maybe_unused]] [5])(int) = { };
 
 static void Foo1 [[maybe_unused]] (void) { }
 
+// C++ only
+static auto FooCPP [[maybe_unused]] (float param) -> auto (*)(float) -> int { return nullptr; }
+
 // 修饰复合类型
 struct [[maybe_unused]] Dummy
 {
