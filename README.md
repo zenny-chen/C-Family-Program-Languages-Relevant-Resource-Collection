@@ -434,8 +434,7 @@ static void (* volatile dummyFuncPtrs [[maybe_unused]] [5])(int) = { };
 __attribute__((unused))
 static void Foo0(void) { }
 
-[[maybe_unused, clang::optnone]]
-static void __attribute__((unused)) Foo1(
+static void __attribute__((unused)) Foo1 [[maybe_unused, clang::optnone]] (
     // 修饰函数形参
     [[maybe_unused]] int a,
     float f [[maybe_unused]],
@@ -457,7 +456,6 @@ static struct [[maybe_unused]]  __attribute__((unused)) Dummy1
 __attribute__((unused)) s1 [[maybe_unused]];
 
 [[maybe_unused]]            // 修饰用结构体类型Dummy2所声明的对象
-__attribute__((unused))     // 修饰结构体类型Dummy2
 static struct [[maybe_unused]] Dummy2
 {
     // 修饰成员对象
@@ -467,6 +465,11 @@ static struct [[maybe_unused]] Dummy2
     int c __attribute__((unused));
 } s2 __attribute__((unused));   // 修饰用结构体类型Dummy2所声明的对象
 ```
+综上所述，对于使用 `[[attribute]]` 和 `__attribute__((attribute))` 修饰对象时，两者均可以放在对象标识符的后面。不过 `[[attribute]]` 可放在整个声明的开头；而 `__attribute__((attribute))` 可放在对象标识符的前面。
+
+在修饰函数时，两者均可放在整个函数声明的开头。不过 `[[attribute]]` 只能放在函数标识符的后面；而 `__attribute__((attribute))` 只能放在函数标识符的前面。
+
+在修饰自定义类型时，两者均可放在类型关键字（**`enum`**、**`struct`**、**`union`** 等）的后面以及类型标识符的前面。
 
 <br />
 
