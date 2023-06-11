@@ -108,7 +108,7 @@ extern "C" void CPPTest()
     printf(R"(The raw string length is: %zu
             )", u16str.length());
 ```
-- C++11之后，新型函数类型声明方式（对于任一涉及函数类型的部分，该函数类型的返回类型可用 **`auto`** 做类型推导）：
+- C++11之后，新型函数类型声明方式（对于任一涉及函数类型的部分，该函数类型的 **返回类型** 可用 **`auto`** 做类型推导）：
 ```cpp
 #include <cstdio>
 #include <functional>
