@@ -430,18 +430,42 @@ static int dummyArray [[maybe_unused]] [5]  = { };
 static void (* volatile dummyFuncPtrs [[maybe_unused]] [5])(int) = { };
 
 // 修饰函数
-[[maybe_unused]] static void Foo0(void) { }
+[[maybe_unused]]
+__attribute__((unused))
+static void Foo0(void) { }
 
-static void Foo1 [[maybe_unused]] (void) { }
+[[maybe_unused, clang::optnone]]
+static void __attribute__((unused)) Foo1(
+    // 修饰函数形参
+    [[maybe_unused]] int a,
+    float f [[maybe_unused]],
+    [[maybe_unused]] char c[256],
+    long* p [[maybe_unused]]
+) { }
 
 // C++ only
 static auto FooCPP [[maybe_unused]] (float param) -> auto (*)(float) -> int { return nullptr; }
 
 // 修饰复合类型
-struct [[maybe_unused]] Dummy
+static struct [[maybe_unused]]  __attribute__((unused)) Dummy1
 {
-    int d;
-};
+    // 修饰成员对象
+    [[maybe_unused]]  __attribute__((unused))
+    int a;
+}
+// 修饰用该结构体类型声明的对象
+__attribute__((unused)) s1 [[maybe_unused]];
+
+[[maybe_unused]]            // 修饰用结构体类型Dummy2所声明的对象
+__attribute__((unused))     // 修饰结构体类型Dummy2
+static struct [[maybe_unused]] Dummy2
+{
+    // 修饰成员对象
+    int __attribute__((unused)) b [[maybe_unused]];
+
+    [[maybe_unused]]
+    int c __attribute__((unused));
+} s2 __attribute__((unused));   // 修饰用结构体类型Dummy2所声明的对象
 ```
 
 <br />
