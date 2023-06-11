@@ -456,7 +456,7 @@ static struct [[maybe_unused]]  __attribute__((unused)) Dummy1
 __attribute__((unused)) s1 [[maybe_unused]];
 
 [[maybe_unused]]            // 修饰用结构体类型Dummy2所声明的对象
-static struct [[maybe_unused]] Dummy2
+static struct [[maybe_unused]] __attribute__((unused)) Dummy2
 {
     // 修饰成员对象
     int __attribute__((unused)) b [[maybe_unused]];
