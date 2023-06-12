@@ -31,6 +31,13 @@
 - [C编译器剖析_1.5 结合C语言来学汇编_浮点数运算(比较大小)](https://blog.csdn.net/sheisc/article/details/43017909)
 - Clang编译器下新引入的 **半精度浮点** 类型：[Half-Precision Floating Point](https://clang.llvm.org/docs/LanguageExtensions.html#half-precision-floating-point)
 - GCC [Half-Precision Floating Point](https://gcc.gnu.org/onlinedocs/gcc/Half-Precision.html)
+- [IEC 60559 interchange and extended types](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2601.pdf)
+此标准提供了以下浮点类型：
+浮点类型 | 关键字 | 后缀
+---- | ---- | ----
+二进制浮点类型 | `_Float16`、`_Float32`、`_Float64`、`_Float128` | `f16`、`f32`、`f64`、`f128`
+
+
 - [strcpy_s](https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/strcpy-s-wcscpy-s-mbscpy-s)（返回类型为 **`errno_t`**，返回值定义为 **`<errno.h>`**；可用的值比如：**`EPERM`**、**`EIO`** 等）
 - [详解C语言中的stdin，stdout，stderr](http://blog.csdn.net/Crazy_Tengt/article/details/72717144)
 - [\<uchar.h\>中的 **c16rtomb** ](https://cloud.tencent.com/developer/section/1009566)
