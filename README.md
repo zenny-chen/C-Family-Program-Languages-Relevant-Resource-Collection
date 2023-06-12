@@ -296,7 +296,7 @@ extern "C" void CPPTest(void)
         return n * thisRef(n - 1);
     };
 
-    auto const value = lambdaExpr(5)* lambdaExpr(1)* lambdaExpr(0);
+    auto const value = lambdaExpr(5) * lambdaExpr(1) * lambdaExpr(0);
     printf("value = %u\n", value);  // value = 120
 ```
 - [Why is the new C++ visibility support so useful?](https://gcc.gnu.org/wiki/Visibility)
