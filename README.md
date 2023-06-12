@@ -33,6 +33,7 @@
 - GCC [Half-Precision Floating Point](https://gcc.gnu.org/onlinedocs/gcc/Half-Precision.html)
 - [IEC 60559 interchange and extended types](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2601.pdf)
 此标准提供了以下浮点类型：
+
 浮点类型 | 关键字 | 后缀
 ---- | ---- | ----
 二进制浮点类型 | `_Float16`、`_Float32`、`_Float64`、`_Float128` | `f16`、`f32`、`f64`、`f128`
