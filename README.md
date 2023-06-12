@@ -36,8 +36,12 @@
 
 浮点类型 | 关键字 | 后缀
 ---- | ---- | ----
-二进制浮点类型 | `_Float16`、`_Float32`、`_Float64`、`_Float128` | `f16`、`f32`、`f64`、`f128`
+二进制浮点 | `_Float16`、`_Float32`、`_Float64`、`_Float128` | `f16`、`f32`、`f64`、`f128`
+二进制扩展浮点 | `_Float32x`、`_Float64x`、`_Float128x` | `f32x`、`f64x`、`f128x`
+十进制浮点 | `_Decimal32`、`_Decimal64`、`_Decimal128` | `d32`、`d64`、`d128`
+十进制扩展浮点 | `_Decimal32x`、`_Decimal64x`、`_Decimal128x` | `d32x`、`d64x`、`d128x`
 
+上述类型后缀中，**`f`** 和 **`d`** 可用大写的 **f** 或 **D**。比如：**`F16`**、**`F64x`**、**`D32`**、**`D128x`**。
 
 - [strcpy_s](https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/strcpy-s-wcscpy-s-mbscpy-s)（返回类型为 **`errno_t`**，返回值定义为 **`<errno.h>`**；可用的值比如：**`EPERM`**、**`EIO`** 等）
 - [详解C语言中的stdin，stdout，stderr](http://blog.csdn.net/Crazy_Tengt/article/details/72717144)
