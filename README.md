@@ -288,6 +288,17 @@ extern "C" void CPPTest(void)
 - [C++20 Coroutine实例教学](https://zhuanlan.zhihu.com/p/414506528)
 - [C++20协程原理和应用](https://csdnnews.blog.csdn.net/article/details/124123024)
 - [Fixed width floating-point types (since C++23)](https://en.cppreference.com/w/cpp/types/floating-point)
+- C++23 递归lambda表达式：
+```cpp
+    auto lambdaExpr = [](this auto const& thisRef, unsigned n) -> unsigned {
+        if (n < 2) return 1;
+
+        return n * thisRef(n - 1);
+    };
+
+    auto const value = lambdaExpr(5)* lambdaExpr(1)* lambdaExpr(0);
+    printf("value = %u\n", value);  // value = 120
+```
 - [Why is the new C++ visibility support so useful?](https://gcc.gnu.org/wiki/Visibility)
 - [链接过程中的符号重定位_C底层](http://blog.csdn.net/darkfaker/article/details/79370796)
 - [C语言的JSON库Jansson](https://www.toutiao.com/a6751005440798114315/)
