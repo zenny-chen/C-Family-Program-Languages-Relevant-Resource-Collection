@@ -105,6 +105,15 @@ extern "C" void CPPTest()
 - [如何在C++ 11中创建线程对象数组？](http://cn.voidcc.com/question/p-vgibagru-zc.html)
 - [C++11 并发指南五(std::condition_variable 详解)](https://www.cnblogs.com/haippy/p/3252041.html)
 - [C++11中获取当前线程的ID](https://en.cppreference.com/w/cpp/thread/get_id)：使用 **`std::this_thread::get_id()`**
+- 获取 `std::thread::id` 对象实例的整数值：
+```cpp
+#include <thread>
+
+// std::hash<std::thread::id> { } 用于构建一个临时的 std::hash<std::thread_id> 对象实例；
+// 后面的 ( std::this_thread::get_id() ) 则是调用 std::hash 的 () 操作符函数，
+// 该操作符函数返回一个 size_t 的值
+const size_t threadID = std::hash<std::thread::id> { } (std::this_thread::get_id());
+```
 - [std::chrono::duration_cast](https://en.cppreference.com/w/cpp/chrono/duration/duration_cast)（除了 **`std::chrono::high_resolution_clock`**，还可使用 **`std::chrono::steady_clock`** 作为时间戳）
 - [一文读懂C++右值引用和std::move](https://zhuanlan.zhihu.com/p/335994370)
 - [Type alias, alias template \(since C++11\)](https://en.cppreference.com/w/cpp/language/type_alias)（比如使用 **`template <typename T> using auto_ptr = unique_ptr<T>`**）
