@@ -97,7 +97,14 @@ extern "C" void CPPTest()
     printf("x = %u\n", x);
 }
 ```
-- [C++ vector清空元素的三种方法](https://blog.csdn.net/weixin_30897079/article/details/97119054)
+- C++ 彻底清除 **`std::vector`** 中所有元素，并将其尺寸变为0的方式：
+```cpp
+    std::vector<int> vecArray { 1, 2, 3, 4 };
+    // 清空vecArray。这种方式通用性比
+    // vecArray.swap(std::vector<int>());
+    // 更高。后者对于高版本C++会有const限定符转换上的编译错误
+    std::vector<int>().swap(vecArray);
+```
 - [Detecting in C++ whether a type is defined, part 1: The initial plunge](https://devblogs.microsoft.com/oldnewthing/20190708-00/?p=102664)
 - [C++的RAII与智能指针](https://zhuanlan.zhihu.com/p/466904205)
 - [Lambda expressions](https://en.cppreference.com/w/cpp/language/lambda)
