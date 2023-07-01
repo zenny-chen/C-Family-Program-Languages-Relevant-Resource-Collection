@@ -1045,7 +1045,7 @@ extern "C" void CPPTest(void)
 template <typename LAMBDA, typename ... PARAM_TYPES>
 static inline void CallLambda(LAMBDA lambda, PARAM_TYPES... params)
 {
-    decltype(lambda(params...)) (* const fptr)(PARAM_TYPES...) = lambda;
+    auto (*fptr)(PARAM_TYPES...) -> decltype(lambda(params...)) = lambda;
     
     constexpr size_t maxParamCount = 64;
     
