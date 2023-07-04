@@ -68,6 +68,7 @@ int my_sprintf(char buffer, const char *fmt, ...)
 - [Wrapper Headers（GCC对\#include_next的官方解释）](https://gcc.gnu.org/onlinedocs/cpp/Wrapper-Headers.html)
 - [（有用的C++ proposal）Familiar template syntax for generic lambdas](http://open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0428r2.pdf)
 - [优先使用using，而非typedef](https://zhuanlan.zhihu.com/p/266140466)
+- [C++ Placement new](https://en.cppreference.com/w/cpp/language/new#Placement_new)
 - C++将一个类对象隐式转换为一个基本类型
 ```cpp
 #include <cstdio>
