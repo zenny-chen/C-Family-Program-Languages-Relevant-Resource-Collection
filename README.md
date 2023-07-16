@@ -250,6 +250,7 @@ extern "C" void CPPTest()
 - [C++中输出/输入十六进制数](https://blog.csdn.net/woaijssss/article/details/93190865)
 - C++中将std::string十六进制字符串转为整数：`std::strtoull`；整数转字符串：`std::to_string()`
 - [C++11 std::strtol, std::strtoll](https://en.cppreference.com/w/cpp/string/byte/strtol)
+- [C++ 浮点数转为字符串并保留一定小数位数](https://blog.csdn.net/henry_23/article/details/117164310)
 - [User-defined literals (since C++11)](https://en.cppreference.com/w/cpp/language/user_literal)
 - [std::atomic_thread_fence](https://en.cppreference.com/w/cpp/atomic/atomic_thread_fence)（**NOTES**: On x86 (including x86-64), atomic_thread_fence functions issue no CPU instructions and only affect compile-time code motion, except for std::atomic_thread_fence(std::memory_order::seq_cst), which issues the full memory fence instruction MFENCE）
 - [std::is_same](https://en.cppreference.com/w/cpp/types/is_same)
