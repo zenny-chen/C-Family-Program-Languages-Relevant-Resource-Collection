@@ -32,6 +32,7 @@
 - [C编译器剖析_1.5 结合C语言来学汇编_浮点数运算(比较大小)](https://blog.csdn.net/sheisc/article/details/43017909)
 - Clang编译器下新引入的 **半精度浮点** 类型：[Half-Precision Floating Point](https://clang.llvm.org/docs/LanguageExtensions.html#half-precision-floating-point)
 - GCC [Half-Precision Floating Point](https://gcc.gnu.org/onlinedocs/gcc/Half-Precision.html)
+- 关于 IEEE-754 标准中的 **ULP**（Units in Last Place），可见：[ULP Considerations of Native Floating-Point Operators](https://www.mathworks.com/help/hdlcoder/ug/ulp-considerations-of-native-floating-point-operators.html#ULP%20Considerations%20of%20Native%20Floating-Point%20Operators)
 - [IEC 60559 interchange and extended types](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2601.pdf)
 此标准提供了以下浮点类型：
 
