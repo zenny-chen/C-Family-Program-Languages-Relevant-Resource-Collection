@@ -10,6 +10,7 @@
 - [http://www.cplusplus.com/reference/](http://www.cplusplus.com/reference/)
 - [https://en.cppreference.com](https://en.cppreference.com/w/)
 - [Clang Contents](https://clang.llvm.org/docs/index.html)
+- [llvm-as - LLVM assembler](https://releases.llvm.org/8.0.0/docs/CommandGuide/llvm-as.html)
 - [Attributes in Clang](https://clang.llvm.org/docs/AttributeReference.html)
 - [Clang Language Extensions](https://clang.llvm.org/docs/LanguageExtensions.html)
 - [GCC Extensions to the C Language Family](https://gcc.gnu.org/onlinedocs/gcc/C-Extensions.html#C-Extensions)
