@@ -49,6 +49,7 @@
 - [strcpy_s](https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/strcpy-s-wcscpy-s-mbscpy-s)（返回类型为 **`errno_t`**，返回值定义为 **`<errno.h>`**；可用的值比如：**`EPERM`**、**`EIO`** 等）
 - [详解C语言中的stdin，stdout，stderr](http://blog.csdn.net/Crazy_Tengt/article/details/72717144)
 - [\<uchar.h\>中的 **c16rtomb** ](https://cloud.tencent.com/developer/section/1009566)
+- [C11获得时间戳：`timespec_get`](https://en.cppreference.com/w/c/chrono/timespec_get)
 - [X Macro](https://en.wikipedia.org/wiki/X_Macro)
 - [C语言压缩文件和用MD5算法校验文件完整性的实例教程_C 语言](https://yq.aliyun.com/ziliao/119635)
 - [C/C++下scanf的%匹配以及过滤字符串问题](https://www.toutiao.com/a6659550631625228808)
