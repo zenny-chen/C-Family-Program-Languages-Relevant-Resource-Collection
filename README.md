@@ -144,6 +144,7 @@ const size_t threadID = std::hash<std::thread::id> { } (std::this_thread::get_id
 std::this_thread::sleep_for(std::chrono::microseconds(1));
 ```
 - [std::this_thread::yield](https://en.cppreference.com/w/cpp/thread/yield)
+- [std::async](https://en.cppreference.com/w/cpp/thread/async)
 - [std::chrono::duration_cast](https://en.cppreference.com/w/cpp/chrono/duration/duration_cast)（除了 **`std::chrono::high_resolution_clock`**，还可使用 **`std::chrono::steady_clock`** 作为时间戳）
 - [一文读懂C++右值引用和std::move](https://zhuanlan.zhihu.com/p/335994370)
 - [Type alias, alias template \(since C++11\)](https://en.cppreference.com/w/cpp/language/type_alias)（比如使用 **`template <typename T> using auto_ptr = unique_ptr<T>`**）
