@@ -719,6 +719,7 @@ int main(void)
 static char sCurrentExecPath[ZF_MAX_PATH_CHARACTERS];
 
 #ifdef __APPLE__
+#include <mach-o/dyld.h>
 
 const char* zf_get_current_exec_path(void)
 {
@@ -727,8 +728,9 @@ const char* zf_get_current_exec_path(void)
         const int maxSize = ZF_MAX_PATH_CHARACTERS - 1;
         uint32_t size = 0;
         _NSGetExecutablePath(NULL, &size);
-        if(size > maxSize)
+        if(size > maxSize) {
             size = maxSize;
+        }
         
         _NSGetExecutablePath(sCurrentExecPath, &size);
         sCurrentExecPath[size] = '\0';
@@ -751,8 +753,9 @@ const char* zf_get_current_exec_path(void)
         GetModuleFileNameW(NULL, path, maxSize);
         
         int len = WideCharToMultiByte(CP_UTF8, 0, path, -1, NULL, 0, NULL, NULL);
-        if(len > maxSize)
+        if(len > maxSize) {
             len = maxSize;
+        }
 
         WideCharToMultiByte(CP_UTF8, 0, path, -1, sCurrentExecPath, len, NULL, NULL);
     }
@@ -770,8 +773,9 @@ const char* zf_get_current_exec_path(void)
     {
         const int maxSize = ZF_MAX_PATH_CHARACTERS - 1;
         int size = readlink("/proc/self/exe", sCurrentExecPath, sizeof(sCurrentExecPath));
-        if(size > maxSize)
+        if(size > maxSize) {
             size = maxSize;
+        }
         
         sCurrentExecPath[size] = '\0';
     }
