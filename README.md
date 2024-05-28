@@ -592,6 +592,22 @@ static struct [[maybe_unused]] __attribute__((unused)) Dummy2
 
 ## 我的一些C语言有趣函数库
 
+- 动态分配指定字节对齐的存储空间
+
+```c
+#include <stdlib.h>
+
+void* MyAlignedAlloc(size_t size, size_t alignment)
+{
+#if _WIN32
+    return _aligned_malloc(size, alignment);
+#else
+    // Unix-like
+    return memalign(alignment, size);
+#endif
+}
+```
+
 - 通过系统控制台输入命令并获得命令执行的结果：
 
 ```c
