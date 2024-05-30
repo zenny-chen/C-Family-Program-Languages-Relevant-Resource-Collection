@@ -30,7 +30,7 @@
 - [CLion遇到Out Of Memory问题的解决方法](http://it.taocms.org/12/12678.htm)（点击菜单栏的 **Help**，然后选择“**Edit Custom VM Options...**”项即可编辑）
 - [值得我们学习的C语言开源项目汇总](https://www.toutiao.com/a6816559091704398339/)
 - [尾递归](https://baike.baidu.com/item/尾递归/554682)
-- [Tail call](https://en.wikipedia.org/wiki/Tail_call)
+- [Tail call](https://en.wikipedia.org/wiki/Tail_call)（[Relation to the while statement](https://en.wikipedia.org/wiki/Tail_call#Relation_to_the_while_statement) 部分的Julia程序演示了尾递归与非尾递归的演示。）
 - [P1467R5 Extended floating-point types and standard names](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2021/p1467r5.html)
 - [Floating-point rules \(Direct3D 11\)](https://learn.microsoft.com/en-us/windows/win32/direct3d11/floating-point-rules)
 - [C编译器剖析_1.5 结合C语言来学汇编_浮点数运算(比较大小)](https://blog.csdn.net/sheisc/article/details/43017909)
