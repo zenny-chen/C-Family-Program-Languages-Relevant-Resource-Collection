@@ -365,6 +365,8 @@ extern "C" void CPPTest(void)
 - [undefined symbol问题的查找定位与解决方法](https://blog.csdn.net/hjwang1/article/details/114387236)
 - [undefined reference to `std::__cxx11::basic_string<char>`](https://www.cnblogs.com/lukybee/p/11846889.html)
 - [目标文件和可执行文件里面都有什么](https://www.cnblogs.com/zjuhaohaoxuexi/p/16217669.html)
+- [COMDAT是什么，据说很多资深大佬都不清楚](https://blog.csdn.net/weixin_46222091/article/details/105084885)
+- [What is the COMDAT section used for?](https://stackoverflow.com/questions/1834597/what-is-the-comdat-section-used-for)
 - 获取当前进程ID：
 ```c
 // Windows
