@@ -367,6 +367,8 @@ extern "C" void CPPTest(void)
 - [目标文件和可执行文件里面都有什么](https://www.cnblogs.com/zjuhaohaoxuexi/p/16217669.html)
 - [COMDAT是什么，据说很多资深大佬都不清楚](https://blog.csdn.net/weixin_46222091/article/details/105084885)
 - [What is the COMDAT section used for?](https://stackoverflow.com/questions/1834597/what-is-the-comdat-section-used-for)
+- [聊一聊Linux动态链接和GOT、PLT](https://blog.csdn.net/lcmsir/article/details/130155368)
+- [聊聊Linux动态链接中的PLT和GOT（１）——何谓PLT与GOT](https://blog.csdn.net/linyt/article/details/51635768)
 - 获取当前进程ID：
 ```c
 // Windows
