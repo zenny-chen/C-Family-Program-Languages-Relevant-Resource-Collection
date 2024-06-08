@@ -132,7 +132,8 @@ extern "C" void CPPTest()
     std::vector<int>().swap(vecArray);
 ```
 - [Detecting in C++ whether a type is defined, part 1: The initial plunge](https://devblogs.microsoft.com/oldnewthing/20190708-00/?p=102664)
-- [C++的RAII与智能指针](https://zhuanlan.zhihu.com/p/466904205)
+- [C++ · RAII 和 智能指针](https://zhuanlan.zhihu.com/p/470270741)
+- [C++RAII与智能指针](https://www.cnblogs.com/chen-pi/p/17825459.html)
 - [Lambda expressions](https://en.cppreference.com/w/cpp/language/lambda)
 - [Lambda expressions in C++](https://learn.microsoft.com/en-us/cpp/cpp/lambda-expressions-in-cpp)
 - [如何在C++ 11中创建线程对象数组？](http://cn.voidcc.com/question/p-vgibagru-zc.html)
