@@ -77,6 +77,7 @@ int my_sprintf(char buffer, const char *fmt, ...)
 ```
 - [Clang官方对__has_include与\#include_next的举例](https://clang.llvm.org/docs/LanguageExtensions.html#include-file-checking-macros)
 - [Wrapper Headers（GCC对\#include_next的官方解释）](https://gcc.gnu.org/onlinedocs/cpp/Wrapper-Headers.html)
+- [C/C++11中的lock-free技术](https://www.toutiao.com/article/7379540606147691059/)
 - [（有用的C++ proposal）Familiar template syntax for generic lambdas](http://open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0428r2.pdf)
 - [C++ Namespaces（包含 **`using`** 的用法）](https://en.cppreference.com/w/cpp/language/namespace)
 - C++ **`namespace`** 的别名化：
