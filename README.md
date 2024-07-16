@@ -398,6 +398,7 @@ strcpy(buffer, getenv("HOME"));
 - [C++ Hashmap Benchmark](https://zhuanlan.zhihu.com/p/569618538)
 - [c++ map 查找性能測試](http://hk.aiuxian.com/article/p-bkrgjqnd-ke.html)
 - [Klib: a Generic Library in C](https://github.com/attractivechaos/klib)
+- [STC - Smart Template Containers](https://github.com/stclib/STC)
 
 <br />
 
