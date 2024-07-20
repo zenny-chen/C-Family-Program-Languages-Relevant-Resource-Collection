@@ -32,6 +32,7 @@
 - ASCII 中的 **`0x0A`** 表示 LF/NL(Line Feed/New Line)，即换行到下一行的行首，对应于C语言中的 **`\n`**；**`0x0D`** 表示 CR (Carriage Return)，即把光标移到行首，对应于C语言中的 **`\r`**。
 - [尾递归](https://baike.baidu.com/item/尾递归/554682)
 - [Tail call](https://en.wikipedia.org/wiki/Tail_call)（[Relation to the while statement](https://en.wikipedia.org/wiki/Tail_call#Relation_to_the_while_statement) 部分的Julia程序演示了尾递归与非尾递归的演示。）
+- [What is an indirect function (IFUNC)?](https://sourceware.org/glibc/wiki/GNU_IFUNC)
 - [P1467R5 Extended floating-point types and standard names](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2021/p1467r5.html)
 - [Floating-point rules \(Direct3D 11\)](https://learn.microsoft.com/en-us/windows/win32/direct3d11/floating-point-rules)
 - [C编译器剖析_1.5 结合C语言来学汇编_浮点数运算(比较大小)](https://blog.csdn.net/sheisc/article/details/43017909)
