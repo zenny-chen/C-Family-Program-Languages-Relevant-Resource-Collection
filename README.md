@@ -276,6 +276,7 @@ extern "C" void CPPTest()
 - [C++ 浮点数转为字符串并保留一定小数位数](https://blog.csdn.net/henry_23/article/details/117164310)
 - [User-defined literals (since C++11)](https://en.cppreference.com/w/cpp/language/user_literal)
 - [std::atomic_thread_fence](https://en.cppreference.com/w/cpp/atomic/atomic_thread_fence)（**NOTES**: On x86 (including x86-64), atomic_thread_fence functions issue no CPU instructions and only affect compile-time code motion, except for std::atomic_thread_fence(std::memory_order::seq_cst), which issues the full memory fence instruction MFENCE）
+- [C++11 threads, affinity and hyperthreading](https://eli.thegreenplace.net/2016/c11-threads-affinity-and-hyperthreading/)
 - [std::is_same](https://en.cppreference.com/w/cpp/types/is_same)
 - [C++14中的变量模板（variable template）](https://en.cppreference.com/w/cpp/language/variable_template)
 - C++14中的泛型lambda表达式以及返回匿名结构体对象的函数
