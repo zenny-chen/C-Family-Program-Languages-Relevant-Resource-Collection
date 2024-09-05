@@ -143,6 +143,7 @@ extern "C" void CPPTest()
 - [Lambda expressions in C++](https://learn.microsoft.com/en-us/cpp/cpp/lambda-expressions-in-cpp)
 - [如何在C++ 11中创建线程对象数组？](http://cn.voidcc.com/question/p-vgibagru-zc.html)
 - [C++11 并发指南五(std::condition_variable 详解)](https://www.cnblogs.com/haippy/p/3252041.html)
+- [std::condition_variable](https://en.cppreference.com/w/cpp/thread/condition_variable)
 - [C++11中获取当前线程的ID](https://en.cppreference.com/w/cpp/thread/get_id)：使用 **`std::this_thread::get_id()`**
 - 获取 `std::thread::id` 对象实例的整数值：
 ```cpp
