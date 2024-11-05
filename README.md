@@ -369,6 +369,7 @@ extern "C" void CPPTest(void)
 - [Getting Started with Intel® Threading Building Blocks \(Intel® TBB\)](https://www.intel.com/content/www/us/en/developer/articles/guide/get-started-with-tbb.html)
 - [TBB排序](https://blog.csdn.net/beyondjhf_2008/article/details/83405545)
 - [TBB parallel_sort Template Function](https://www.threadingbuildingblocks.org/docs/help/index.htm#reference/algorithms/parallel_sort_func.html)
+- [oneTBB Hybrid CPU and NUMA Support](https://oneapi-src.github.io/oneTBB/GSG/next_steps.html#hybrid-cpu-and-numa-support)（需要安装 [**HWLOC**](https://github.com/open-mpi/hwloc)，官网：[Portable Hardware Locality (hwloc)](https://www-lb.open-mpi.org/projects/hwloc/)）
 - [**TBB** -- task_arena and task_group slowdown a lot my tasks](https://community.intel.com/t5/Intel-oneAPI-Threading-Building/task-arena-and-task-group-slowdown-a-lot-my-tasks/m-p/1565777/)
 - [task_arenas numa constraints leads to partial cpu usage](https://github.com/oneapi-src/oneTBB/issues/773)
 - [Optimize Intel® oneAPI Threading Building Blocks for NUMA Architectures](https://www.intel.com/content/www/us/en/developer/videos/onetbb-optimizing-for-numa-architectures.html)
