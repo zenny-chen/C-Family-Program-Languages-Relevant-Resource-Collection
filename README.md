@@ -322,6 +322,7 @@ extern "C" void CPPTest(void)
 - [C++17：内联变量](https://www.toutiao.com/article/7117584483603497472/)
 - [c++17中的 constexpr lambda 表达式](https://docs.microsoft.com/zh-cn/cpp/cpp/lambda-expressions-constexpr)
 - [C++17 template \<auto\>](https://mariusbancila.ro/blog/2018/05/23/template-auto/)
+- [C++17：用折叠表达式实现一个IsAllTrue函数](https://www.toutiao.com/article/7412256602583089705/)
 - [std::size](https://en.cppreference.com/w/cpp/iterator/size)：可使用常量表达式返回一个C数组的元素个数，或是一个容器的元素个数。
 - [Read-Write mutex with shared_mutex](https://ncona.com/2019/03/read-write-mutex-with-shared_mutex/)
 - [C++20不定参数个数的宏](https://en.cppreference.com/w/cpp/preprocessor/replace#Function-like_macros)
