@@ -167,6 +167,7 @@ static auto CondVarTest() -> void
     std::thread consumerThread([&cond, &mtx, &sharedValue]() {
         std::unique_lock lck(mtx);
         cond.wait(lck, [&sharedValue]() { return sharedValue != 0; });
+        lck.unlock();
 
         printf("Consumer thread running... sharedValue is: %d\n", sharedValue);
     });
