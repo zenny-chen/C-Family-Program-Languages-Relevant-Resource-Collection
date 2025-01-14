@@ -145,6 +145,46 @@ extern "C" void CPPTest()
 - [如何在C++ 11中创建线程对象数组？](http://cn.voidcc.com/question/p-vgibagru-zc.html)
 - [C++11 并发指南五(std::condition_variable 详解)](https://www.cnblogs.com/haippy/p/3252041.html)
 - [std::condition_variable](https://en.cppreference.com/w/cpp/thread/condition_variable)
+
+```cpp
+#include <cstdio>
+#include <cstdlib>
+#include <utility>
+#include <algorithm>
+#include <thread>
+#include <chrono>
+#include <condition_variable>
+#include <mutex>
+
+static auto CondVarTest() -> void
+{
+    std::condition_variable cond;
+    std::mutex mtx;
+    std::unique_lock producerLock(mtx);
+
+    volatile int sharedValue = 0;
+
+    std::thread consumerThread([&cond, &mtx, &sharedValue]() {
+        std::unique_lock lck(mtx);
+        cond.wait(lck, [&sharedValue]() { return sharedValue != 0; });
+
+        printf("Consumer thread running... sharedValue is: %d\n", sharedValue);
+    });
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+    puts("Set sharedValue and notify the condition variable...");
+
+    sharedValue = 100;
+
+    producerLock.unlock();
+    cond.notify_all();
+
+    puts("Joining the consumer thread...");
+    consumerThread.join();
+}
+```
+
 - [C++11中获取当前线程的ID](https://en.cppreference.com/w/cpp/thread/get_id)：使用 **`std::this_thread::get_id()`**
 - 获取 `std::thread::id` 对象实例的整数值：
 ```cpp
