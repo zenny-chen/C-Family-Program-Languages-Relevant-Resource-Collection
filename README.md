@@ -136,6 +136,27 @@ extern "C" void CPPTest()
     // 更高。后者对于高版本C++会有const限定符转换上的编译错误
     std::vector<int>().swap(vecArray);
 ```
+- 对 **`std::hash`** 的基本使用：
+```cpp
+    std::hash<std::string> strHash;
+    const size_t hashValue0 = strHash("hello");
+    const size_t hashValue1 = strHash(std::string("hello"));
+    if (hashValue0 == hashValue1) {
+        printf("Equal! The value is: %zu\n", hashValue0);
+    }
+    else {
+        puts("Hash value not equal!");
+    }
+
+    const size_t hashValue2 = strHash("");
+    const size_t hashValue3 = strHash(std::string(""));
+    if (hashValue2 == hashValue3) {
+        printf("Equal! Empty string hash: %zu\n", hashValue2);
+    }
+    else {
+        puts("Empty string hash value not equal!");
+    }
+```
 - [Detecting in C++ whether a type is defined, part 1: The initial plunge](https://devblogs.microsoft.com/oldnewthing/20190708-00/?p=102664)
 - [C++ · RAII 和 智能指针](https://zhuanlan.zhihu.com/p/470270741)
 - [C++RAII与智能指针](https://www.cnblogs.com/chen-pi/p/17825459.html)
