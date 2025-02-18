@@ -381,6 +381,8 @@ extern "C" void CPPTest(void)
     printf("The value is: %d\n", lam(10));
 ```
 - [c++11-17 模板核心知识（四）—— 可变参数模板 Variadic Template](https://www.cnblogs.com/zhangyachen/p/13946450.html)
+- [C++三剑客之std::optional(一) : 使用详解](https://blog.csdn.net/haokan123456789/article/details/136099479)
+- [std::optional](https://en.cppreference.com/w/cpp/utility/optional)
 - [std::nullopt](https://en.cppreference.com/w/cpp/utility/optional/nullopt)
 - [C++17 Structured binding declaration](https://en.cppreference.com/w/cpp/language/structured_binding)
 - [C++17：内联变量](https://www.toutiao.com/article/7117584483603497472/)
