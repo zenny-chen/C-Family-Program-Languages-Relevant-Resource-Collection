@@ -229,18 +229,48 @@ std::this_thread::sleep_for(std::chrono::microseconds(1));
 - [一文读懂C++右值引用和std::move](https://zhuanlan.zhihu.com/p/335994370)
 - [Type alias, alias template \(since C++11\)](https://en.cppreference.com/w/cpp/language/type_alias)（比如使用 **`template <typename T> using auto_ptr = unique_ptr<T>`**）
 - C++11对某一类型做cv限定符的移除并声明一个对象：使用 [std::decay](https://en.cppreference.com/w/cpp/types/decay)，例如：
+
 ```cpp
-    #include <type_traits>
-    const int c = 100;
-    std::decay<decltype(c)>::type a = c;        // a为int类型
+#include <type_traits>
+
+const int c = 100;
+std::decay<decltype(c)>::type a = c;        // a为int类型
+
+// 定义一个通用的能移除一个容器所有元素并将大小恢复成原始状态的宏
+#define REMOVEALL_IN_CONTAINER(container)   std::decay<decltype(container)>::type().swap(container)
+
+// 使用举例
+#include <vector>
+
+auto test() -> void
+{
+    struct MyObject
+    {
+        int elem = 0;
+
+        ~MyObject()
+        {
+            printf("MyObject destructor called! elem = %d\n", elem);
+        }
+    };
+
+    std::vector<MyObject> myvec;
+    MyObject &refObj = myvec.emplace_back();
+    refObj.elem = 100;
+    REMOVEALL_IN_CONTAINER(myvec);
+}
+
 ```
+
 - C++11原生字符串字面量（Raw string literal）
+
 ```cpp
     const char16_t* raw_u16string = uR"(你好，世界！)";
     std::u16string u16str(raw_u16string);
     printf(R"(The raw string length is: %zu
             )", u16str.length());
 ```
+
 - C++11之后，新型函数类型声明方式（对于任一涉及函数类型的部分，该函数类型的 **返回类型** 可用 **`auto`** 做类型推导）：
 ```cpp
 #include <cstdio>
