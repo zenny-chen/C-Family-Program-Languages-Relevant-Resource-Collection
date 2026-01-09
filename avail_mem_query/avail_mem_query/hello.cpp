@@ -53,8 +53,8 @@ static inline auto FetchAvailableMemorySize() -> size_t
 
     while (fgets(line, sizeof(line), fp) != nullptr)
     {
-        const char* key = strtok(line, ":");
-        const char* value = strtok(nullptr, ":");
+        const char* const key = strtok(line, ":");
+        const char* const value = strtok(nullptr, ":");
 
         if (key != nullptr && value != nullptr)
         {
