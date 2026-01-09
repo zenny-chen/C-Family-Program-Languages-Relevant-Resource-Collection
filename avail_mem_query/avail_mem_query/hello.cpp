@@ -84,7 +84,7 @@ static inline auto FetchAvailableMemorySize() -> size_t
 
     // If `availMemSize` does not exist, just estimate it.
     if (availMemSize == 0U) {
-        availMemSize = info->free + info->buffers + info->cached;
+        availMemSize = freeMemSize + buffers + cachedSize;
     }
 
     return availMemSize;
