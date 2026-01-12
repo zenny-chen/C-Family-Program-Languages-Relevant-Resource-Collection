@@ -4,6 +4,11 @@
 #include <stdlib.h>
 
 #define _USE_MATH_DEFINES   1
+
+#ifndef __USE_MISC
+#define __USE_MISC          1
+#endif
+
 #include <math.h>
 
 #if _WIN32

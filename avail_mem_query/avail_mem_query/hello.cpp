@@ -1,8 +1,14 @@
 #include <cstdio>
 #include <cstdint>
 #include <cstdlib>
+#include <cstring>
 
 #define _USE_MATH_DEFINES   1
+
+#ifndef __USE_MISC
+#define __USE_MISC          1
+#endif
+
 #include <math.h>
 #include <cmath>
 #include <utility>
