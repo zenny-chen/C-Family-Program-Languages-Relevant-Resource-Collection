@@ -21,6 +21,7 @@
 
 #if _WIN32
 #include <Windows.h>
+#include <Psapi.h>
 #else
 #include <unistd.h>
 #include <sys/sysinfo.h>
@@ -46,9 +47,7 @@ static inline auto FetchAvailableMemorySize() -> size_t
 #else
     // Linux system
     FILE* fp = fopen("/proc/meminfo", "r");
-    if (fp == nullptr) {
-        return 0U;
-    }
+    if (fp == nullptr) return 0U;
 
     char line[256]{ };
     size_t totalMemSize = 0U;
@@ -97,6 +96,58 @@ static inline auto FetchAvailableMemorySize() -> size_t
 #endif // _WIN32
 }
 
+static inline auto FetchCurrentProcessMemoryUsage() -> size_t
+{
+#if _WIN32
+    PROCESS_MEMORY_COUNTERS pmc{ };
+    const HANDLE hProcess = GetCurrentProcess();
+
+    if (GetProcessMemoryInfo(hProcess, &pmc, sizeof(pmc)))
+    {
+        printf("Current process used working set size: %.2f MB\n", double(pmc.WorkingSetSize) / (1024.0 * 1024.0));
+        printf("Current process used peak working set size: %.2f MB\n", double(pmc.PeakWorkingSetSize) / (1024.0 * 1024.0));
+        printf("Current process used page file size: %.2f MB\n", double(pmc.PagefileUsage) / (1024.0 * 1024.0));
+        printf("Current process used peak page file size: %.2f MB\n", double(pmc.PeakPagefileUsage) / (1024.0 * 1024.0));
+        printf("Current process page fault count: %lu\n", pmc.PageFaultCount);
+
+        return pmc.WorkingSetSize;
+    }
+    else
+    {
+        fprintf(stderr, "Current process memory usage fetch failed: %lu\n", GetLastError());
+        return 0U;
+    }
+#else
+    FILE* fp = fopen("/proc/self/statm", "r");
+    if (fp == nullptr) return 0U;
+
+    size_t vmPages = 0UL;
+    size_t residentPages = 0UL;
+    size_t sharePages = 0UL;
+    size_t codeSegPages = 0UL;
+    size_t libPages = 0UL;
+    size_t dataPages = 0UL;
+    size_t dirtyPages = 0UL;
+
+    const size_t pageSize = sysconf(_SC_PAGESIZE);
+    
+    fscanf(fp, "%zu %zu %zu %zu %zu %zu %zu",
+        &vmPages, &residentPages, &sharePages, &codeSegPages, &libPages, &dataPages, &dirtyPages);
+    
+    fclose(fp);
+
+    printf("Current process used virtual memory pages: %zu, %.2f MB\n", vmPages, double(vmPages * pageSize) / (1024.0 * 1024.0));
+    printf("Current process used resident set pages: %zu, %.2f MB\n", residentPages, double(residentPages * pageSize) / (1024.0 * 1024.0));
+    printf("Current process used shared memory pages: %zu, %.2f MB\n", sharePages, double(sharePages * pageSize) / (1024.0 * 1024.0));
+    printf("Current process used code segment pages: %zu, %.2f MB\n", codeSegPages, double(codeSegPages * pageSize) / (1024.0 * 1024.0));
+    printf("Current process used library pages: %zu, %.2f MB\n", libPages, double(libPages * pageSize) / (1024.0 * 1024.0));
+    printf("Current process used data+stack pages: %zu, %.2f MB\n", dataPages, double(dataPages * pageSize) / (1024.0 * 1024.0));
+    printf("Current process used dirty pages: %zu, %.2f MB\n", dirtyPages, double(dirtyPages * pageSize) / (1024.0 * 1024.0));
+
+    return vmPages * pageSize;
+
+#endif
+}
 
 extern "C" auto CPPTest() -> void
 {
@@ -130,6 +181,10 @@ extern "C" auto CPPTest() -> void
 
     const size_t availMemSize = FetchAvailableMemorySize();
     printf("Currently available memory size: %.2f MB\n", double(availMemSize) / (1024.0 * 1024.0));
+
+    void* mem = malloc(256U * 1024U * 1024U);
+    FetchCurrentProcessMemoryUsage();
+    free(mem);
 
     puts("CPPTest() completed!");
 }
