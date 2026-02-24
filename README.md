@@ -487,6 +487,7 @@ extern "C" void CPPTest(void)
 - [What is the COMDAT section used for?](https://stackoverflow.com/questions/1834597/what-is-the-comdat-section-used-for)
 - [聊一聊Linux动态链接和GOT、PLT](https://blog.csdn.net/lcmsir/article/details/130155368)
 - [聊聊Linux动态链接中的PLT和GOT（１）——何谓PLT与GOT](https://blog.csdn.net/linyt/article/details/51635768)
+- [别再用 printf 猜性能瓶颈了！C++ 程序员必备的性能分析工具清单](https://mp.weixin.qq.com/s?__biz=Mzk2NDU4ODU2OQ==&mid=2247484557&idx=1&sn=935cf0f2b06b73ccb5df28d427d4718a)
 - 获取当前进程ID：
 ```c
 // Windows
