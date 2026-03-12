@@ -28,6 +28,7 @@
 1. 点击菜单栏上的Navigate，选择File Structure
 1. 也可使用快捷键：Ctrl + F12
 - [CLion遇到Out Of Memory问题的解决方法](http://it.taocms.org/12/12678.htm)（点击菜单栏的 **Help**，然后选择“**Edit Custom VM Options...**”项即可编辑）
+- VSCode 中如何过滤掉不需要搜索的文件类型：在 VSCode 左侧栏的第二项（搜索栏）中，点击 “**Replace**” 下方的 **...** 按钮，这将会展开 “files to include” 以及 “files to exclude”。然后在 “files to exclude” 中输入要排除的文件类型即可，比如：`*.cmake,*.txt,Makefile*,*.make,*.internal,*.log,*.json`。
 - [值得我们学习的C语言开源项目汇总](https://www.toutiao.com/a6816559091704398339/)
 - ASCII 中的 **`0x0A`** 表示 LF/NL(Line Feed/New Line)，即换行到下一行的行首，对应于C语言中的 **`\n`**；**`0x0D`** 表示 CR (Carriage Return)，即把光标移到行首，对应于C语言中的 **`\r`**。
 - [尾递归](https://baike.baidu.com/item/尾递归/554682)
